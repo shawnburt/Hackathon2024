@@ -9,6 +9,7 @@ namespace ESGHackathon2024
   {
     #region TrainingTypeID
     [PXDBIdentity(IsKey = true)]
+        [PXSelector(typeof(MATTrainingType),SubstituteKey =typeof(trainingTypeCD),DescriptionField =typeof(descr))]
     public virtual int? TrainingTypeID { get; set; }
     public abstract class trainingTypeID : PX.Data.BQL.BqlInt.Field<trainingTypeID> { }
     #endregion
