@@ -45,6 +45,9 @@
     <Reference Include="PX.Data">
       <HintPath>..\..\..\..\Bin\PX.Data.dll</HintPath>
     </Reference>
+    <Reference Include="PX.Data.BQL.Fluent">
+      <HintPath>..\..\..\..\Bin\PX.Data.BQL.Fluent.dll</HintPath>
+    </Reference>
     <Reference Include="PX.Objects">
       <HintPath>..\..\..\..\Bin\PX.Objects.DLL</HintPath>
     </Reference>
@@ -55,9 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAC\MATPosClass.cs" />
+    <Compile Include="DAC\MATPosType.cs" />
     <Compile Include="DAC\MATTraining.cs" />
     <Compile Include="DAC\MATTrainingType.cs" />
     <Compile Include="DAC\MATTrainingAssign.cs" />
+    <Compile Include="DACExt\EPPositionExt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,7 +75,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DACExt\" />
     <Folder Include="GraphExt\" />
     <Folder Include="Graph\" />
   </ItemGroup>
