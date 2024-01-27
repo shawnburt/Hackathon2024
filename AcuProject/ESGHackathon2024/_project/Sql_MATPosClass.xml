@@ -1,0 +1,23 @@
+﻿<Sql TableName="MATPosClass" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="MATPosClass">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="PosClassID" type="Int" />
+  <col name="PosClassCD" type="NVarChar(30)" />
+  <col name="Descr" type="NVarChar(256)" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <index name="MATPosClass_PK" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="PosClassID" />
+  </index>
+  <index name="MATPosClass_PosClassCD" unique="true">
+    <col name="CompanyID" />
+    <col name="PosClassCD" />
+  </index>
+</table>]]></CDATA>
+</Sql>
