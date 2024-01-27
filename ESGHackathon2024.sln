@@ -1,11 +1,27 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Hackathon2024", "C:\Acumatica ERP\Hackathon2024", "{407B75C1-DF84-479F-BD54-F5A5D7012034}"
-	ProjectSection(WebsiteProperties) = preProject		
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Hackathon2024", "..\..\..\", "{407B75C1-DF84-479F-BD54-F5A5D7012034}"
+	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		ProjectReferences = "{9BC6D61A-5D4B-4D57-BC6B-5E3F9D04377E}|ESGHackathon2024.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_4445"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Hackathon2024\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4445\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_4445"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Hackathon2024\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4445\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "4445"
 		VWDDynamicPort = "false"
-		ProjectReferences = "{9BC6D61A-5D4B-4D57-BC6B-5E3F9D04377E}|ESGHackathon2024.dll;"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESGHackathon2024", "ESGHackathon2024\ESGHackathon2024.csproj", "{9BC6D61A-5D4B-4D57-BC6B-5E3F9D04377E}"
@@ -17,6 +33,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{407B75C1-DF84-479F-BD54-F5A5D7012034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{407B75C1-DF84-479F-BD54-F5A5D7012034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BC6D61A-5D4B-4D57-BC6B-5E3F9D04377E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BC6D61A-5D4B-4D57-BC6B-5E3F9D04377E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
