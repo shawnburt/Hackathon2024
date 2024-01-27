@@ -22,6 +22,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Hackathon2024", "..\..\..\"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "4445"
 		VWDDynamicPort = "false"
+		SlnRelativePath = "..\..\..\..\Hackathon2024\"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESGHackathon2024", "ESGHackathon2024\ESGHackathon2024.csproj", "{9BC6D61A-5D4B-4D57-BC6B-5E3F9D04377E}"
@@ -38,5 +39,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4556EE53-6731-438A-BD61-0D528D9C867A}
 	EndGlobalSection
 EndGlobal
