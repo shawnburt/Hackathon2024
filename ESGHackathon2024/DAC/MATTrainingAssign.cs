@@ -9,7 +9,7 @@ using CR = PX.Objects.CR;
 namespace ESGHackathon2024
 {
 	[Serializable]
-	[PXCacheName("Training Assign")]
+	[PXCacheName(MATMessages.TrainingAssign)]
 	[PXPrimaryGraph(typeof(MATTrainingAssignMaint))]
 	public class MATTrainingAssign : IBqlTable
 	{
@@ -28,31 +28,32 @@ namespace ESGHackathon2024
 
 		#region BAccountID
 		[PXDBInt(IsKey = true)]
-		[PXUIField(DisplayName = "BAccount ID")]
+		[PXUIField(DisplayName = MATMessages.BusinessAccount)]
 		[PXSelector(typeof(Search<BAccount.bAccountID>), SubstituteKey = typeof(BAccount.acctCD), DescriptionField = typeof(BAccount.acctName))]
 		[PXParent(typeof(Select<BAccount, Where<BAccount.bAccountID, Equal<Current<BAccount.bAccountID>>>>))]
+		[PXForeignReference(typeof(FK.BAccount))]
 		public virtual int? BAccountID { get; set; }
 		public abstract class bAccountID : BqlInt.Field<bAccountID> { }
 		#endregion
 
 		#region TrainingID
 		[PXDBInt(IsKey = true)]
-		[PXUIField(DisplayName = "Training ID")]
+		[PXUIField(DisplayName = MATMessages.Training)]
 		[PXSelector(typeof(Search<MATTraining.trainingID>), SubstituteKey = typeof(MATTraining.trainingCD), DescriptionField = typeof(MATTraining.descr))]
+		[PXForeignReference(typeof(FK.Training))]
 		public virtual int? TrainingID { get; set; }
 		public abstract class trainingID : BqlInt.Field<trainingID> { }
 		#endregion
 
 		#region CompletionDate
 		[PXDBDate]
-		[PXUIField(DisplayName = "Completion Date")]
+		[PXUIField(DisplayName = MATMessages.CompletionDate)]
 		public virtual DateTime? CompletionDate { get; set; }
 		public abstract class completionDate : BqlDateTime.Field<completionDate> { }
 		#endregion
 
 		#region Tstamp
 		[PXDBTimestamp()]
-		[PXUIField(DisplayName = "Tstamp")]
 		public virtual byte[] Tstamp { get; set; }
 		public abstract class tstamp : BqlByteArray.Field<tstamp> { }
 		#endregion

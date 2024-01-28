@@ -19,7 +19,7 @@ namespace ESGHackathon2024
 
         #region UsrPosClassID
         [PXDBInt]
-        [PXUIField(DisplayName = "Position Class")]
+        [PXUIField(DisplayName = MATMessages.PositionClass)]
         [PXSelector(typeof(Search<MATPosClass.posClassID>), SubstituteKey = typeof(MATPosClass.posClassCD), DescriptionField = typeof(MATPosClass.descr))]
         [PXForeignReference(typeof(FK.PosClass))]
         public int? UsrPosClassID { get; set; }
@@ -28,7 +28,7 @@ namespace ESGHackathon2024
 
         #region UsrPosTypeID
         [PXDBInt]
-        [PXUIField(DisplayName = "Position Type")]
+        [PXUIField(DisplayName = MATMessages.PositionType)]
         [PXSelector(typeof(Search<MATPosType.posTypeID>), SubstituteKey = typeof(MATPosType.posTypeCD), DescriptionField = typeof(MATPosType.descr))]
         [PXForeignReference(typeof(FK.PosType))]
         public int? UsrPosTypeID { get; set; }

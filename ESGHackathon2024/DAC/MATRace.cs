@@ -1,12 +1,12 @@
 ﻿using System;
 using PX.Data;
-using PX.Data.ReferentialIntegrity.Attributes;
 using PX.Data.BQL;
+using PX.Data.ReferentialIntegrity.Attributes;
 
 namespace ESGHackathon2024
 {
     [Serializable]
-    [PXCacheName("Race", PXDacType.Catalogue)]
+    [PXCacheName(MATMessages.Race, PXDacType.Catalogue)]
     [PXPrimaryGraph(typeof(MATRaceMaint))]
     public partial class MATRace : IBqlTable
     {
@@ -21,21 +21,20 @@ namespace ESGHackathon2024
         #region RaceID
         [PXDBString(30, IsKey = true, IsUnicode = true, InputMask = "")]
         [PXDefault]
-        [PXUIField(DisplayName = "Race", Visibility = PXUIVisibility.SelectorVisible)]
+        [PXUIField(DisplayName = MATMessages.Race, Visibility = PXUIVisibility.SelectorVisible)]
         public virtual string RaceID { get; set; }
         public abstract class raceID : BqlString.Field<raceID> { }
         #endregion
 
         #region Description
         [PXDBString(256, IsUnicode = true, InputMask = "")]
-        [PXUIField(DisplayName = "Description", Visibility = PXUIVisibility.SelectorVisible)]
+        [PXUIField(DisplayName = MATMessages.Description, Visibility = PXUIVisibility.SelectorVisible)]
         public virtual string Description { get; set; }
         public abstract class description : BqlString.Field<description> { }
         #endregion
 
         #region Tstamp
         [PXDBTimestamp()]
-        [PXUIField(DisplayName = "Tstamp")]
         public virtual byte[] Tstamp { get; set; }
         public abstract class tstamp : BqlByteArray.Field<tstamp> { }
         #endregion
