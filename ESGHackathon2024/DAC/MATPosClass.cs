@@ -7,6 +7,7 @@ namespace Hackathon2024
 {
     [Serializable]
     [PXCacheName("MATPosClass")]
+    [PXPrimaryGraph(typeof(MATPosClassMaint))]
     public class MATPosClass : IBqlTable
     {
         #region Keys
@@ -22,7 +23,7 @@ namespace Hackathon2024
 
 
         #region PosClassID
-        [PXDBInt(IsKey = true)]
+        [PXDBIdentity]
         [PXUIField(DisplayName = "Pos Class ID")]
         public virtual int? PosClassID { get; set; }
         public abstract class posClassID : BqlInt.Field<posClassID> { }
@@ -30,13 +31,15 @@ namespace Hackathon2024
 
         #region PosClassCD
         [PXDBString(30, IsKey = true, IsUnicode = true, InputMask = "")]
-        [PXUIField(DisplayName = "Pos Class CD")]
+        [PXDefault]
+        [PXUIField(DisplayName = "Position Class")]
         public virtual string PosClassCD { get; set; }
         public abstract class posClassCD : BqlString.Field<posClassCD> { }
         #endregion
 
         #region Descr
         [PXDBString(256, IsUnicode = true, InputMask = "")]
+        [PXDefault]
         [PXUIField(DisplayName = "Description")]
         public virtual string Descr { get; set; }
         public abstract class descr : BqlString.Field<descr> { }

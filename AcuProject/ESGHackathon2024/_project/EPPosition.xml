@@ -1,0 +1,4 @@
+﻿<Table TableName="EPPosition">
+    <Column TableName="EPPosition" ColumnName="UsrPosClassID" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPPosition" ColumnName="UsrPosTypeID" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

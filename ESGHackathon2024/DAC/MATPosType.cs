@@ -7,6 +7,7 @@ namespace Hackathon2024
 {
     [Serializable]
     [PXCacheName("MATPosType")]
+    [PXPrimaryGraph(typeof(MATPosTypeMaint))]
     public class MATPosType : IBqlTable
     {
         #region Keys
@@ -22,21 +23,23 @@ namespace Hackathon2024
 
 
         #region PosTypeID
-        [PXDBInt(IsKey = true)]
-        [PXUIField(DisplayName = "Pos Type ID")]
+        [PXDBIdentity]
+        [PXSelector(typeof(Search<posTypeID>), SubstituteKey = typeof(posTypeCD), DescriptionField = typeof(descr))]
         public virtual int? PosTypeID { get; set; }
         public abstract class posTypeID : BqlInt.Field<posTypeID> { }
         #endregion
 
         #region PosTypeCD
         [PXDBString(30, IsKey = true, IsUnicode = true, InputMask = "")]
-        [PXUIField(DisplayName = "Pos Type CD")]
+        [PXDefault]
+        [PXUIField(DisplayName = "Position Type")]
         public virtual string PosTypeCD { get; set; }
         public abstract class posTypeCD : BqlString.Field<posTypeCD> { }
         #endregion
 
         #region Descr
         [PXDBString(256, IsUnicode = true, InputMask = "")]
+        [PXDefault]
         [PXUIField(DisplayName = "Description")]
         public virtual string Descr { get; set; }
         public abstract class descr : BqlString.Field<descr> { }

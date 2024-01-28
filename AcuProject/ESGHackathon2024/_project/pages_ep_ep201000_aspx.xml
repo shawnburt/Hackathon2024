@@ -1,0 +1,18 @@
+﻿<Page path="~/pages/ep/ep201000.aspx" pageSource="jVTJbtswED03QP6BYJHe6iXoKbWDul7aAHYqRG7iW0FLU5sxRaok5SWHfnuHohTLa6oTxWXmzXtvpnX1hQRsBmTI5CzDRZt231MyYsaCdgcDLnDvb327Y+pDbuwjh1UtyTcp6WRW9Zcg7RPXkKVtanUGlDwywWNm4QH+ZGBsm/5mwuB+V8VF3H5w3Wg2Go0aM+m6Fhl6eUHwu5Nz0NyaNnUJf/Un/hYlY27ds5/SukWcQ6fk6vby4vKihaV4lONNCuSRa5sxETA7fxO/C9BCCDddJS2WQe56bRrhuunA5luBYBF8VyIG7Q7TeS+kRGeSYVkh6CWGufXgW+n6Jpj0mGWhynQEebDYUPLEY4cFK7l6fWr8U+Ig37MEawsmtR/TZ4isqfWDWqAMt1zJEePSUhJonjC9ceAdeeUpUs0Nnzpqxo75AkmOpsuEmLJo0VVJwmRsKmcVtOHeNeLBhGyZ65Uk3HbnaBEwRQpSryapn8jSqu+R4YiuV5g+Rfz1aeKHZ3n/pnmcR5nh4oDm78Bnc/z/1Gik6z1FQrtxBL585DKG9Q1pOsN1hFArdA2Xs7LwTuQoNyX3uK1SuuUifxEC09G87INt+aUVOvFzZqxzY8hfMKlrIESw4NLdKFTekXEISxDHxXMl58d5ohEkU9A77th75W2hRJbI/YCHgf29PPKAg4gRXRH2roeVcZMKthkonTiaP8zsZ/b6eY+8c9+5eGGvLxl6N/ZdgANoDtHiq0J9xrC2HcFnSHIXreAUrP8v4lyH+0yINh34sVPJ2QMTaZ763jkWEh19kqDWg1qNIcHCLZxFM2QbldmHTPgZUN1oHlgztExbn7R02pBNUfPCpCPfEVoJb5nJ6C0ycOQt+jH3TQVxVbe93CfUPR/eiVMJv0Pp6fgHzFf8UQq//9wnqPjkuHuO63harGI4vbbPzkA76LeW61FHPSkSliqNuCzHyrUbGU4lnNauB59wlKjVFlkl45FB+A8=">
+    <PXGridLevel DataMember="EPPosition" ParentId="phL_grid_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrPosClassID" />
+                    <Prop Key="Width" Value="140" />
+                </PXGridColumn>
+            </AddItem>
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrPosTypeID" />
+                    <Prop Key="Width" Value="140" />
+                </PXGridColumn>
+            </AddItem>
+        </Children>
+    </PXGridLevel>
+</Page>

@@ -1,3 +1,4 @@
+using ESGHackathon2024;
 using PX.Data;
 using PX.Data.BQL;
 using PX.Data.ReferentialIntegrity.Attributes;
@@ -18,7 +19,8 @@ namespace Hackathon2024
 
         #region UsrPosClassID
         [PXDBInt]
-        [PXUIField(DisplayName = "Position Class ID")]
+        [PXUIField(DisplayName = "Position Class")]
+        [PXSelector(typeof(Search<MATPosClass.posClassID>), SubstituteKey = typeof(MATPosClass.posClassCD), DescriptionField = typeof(MATPosClass.descr))]
         [PXForeignReference(typeof(FK.PosClass))]
         public int? UsrPosClassID { get; set; }
         public abstract class usrPosClassID : BqlInt.Field<usrPosClassID> { }
@@ -26,7 +28,8 @@ namespace Hackathon2024
 
         #region UsrPosTypeID
         [PXDBInt]
-        [PXUIField(DisplayName = "Position Type ID")]
+        [PXUIField(DisplayName = "Position Type")]
+        [PXSelector(typeof(Search<MATPosType.posTypeID>), SubstituteKey = typeof(MATPosType.posTypeCD), DescriptionField = typeof(MATPosType.descr))]
         [PXForeignReference(typeof(FK.PosType))]
         public int? UsrPosTypeID { get; set; }
         public abstract class usrPosTypeID : BqlInt.Field<usrPosTypeID> { }

@@ -1,7 +1,7 @@
 ﻿<Sql TableName="MATPosType" TableSchemaXml="#CDATA">
     <CDATA name="TableSchemaXml"><![CDATA[<table name="MATPosType">
   <col name="CompanyID" type="Int" default="Zero" />
-  <col name="PosTypeID" type="Int" />
+  <col name="PosTypeID" type="Int" identity="true" />
   <col name="PosTypeCD" type="NVarChar(30)" />
   <col name="Descr" type="NVarChar(256)" />
   <col name="tstamp" type="Timestamp" />

@@ -67,6 +67,8 @@
     <Compile Include="Graph\MATTrainingTypeMaint.cs" />
     <Compile Include="Graph\MATTrainingAssignMaint.cs" />
     <Compile Include="DACExt\EPPositionExt.cs" />
+    <Compile Include="Graph\MATPosClassMaint.cs" />
+    <Compile Include="Graph\MATPosTypeMaint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
