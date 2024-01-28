@@ -1,6 +1,8 @@
 ﻿using PX.Data;
 using PX.Objects.EP;
 using PX.Data.BQL.Fluent;
+using PX.Objects.CR;
+using ESGHackathon2024.Attributes;
 
 namespace ESGHackathon2024
 {
@@ -17,5 +19,8 @@ namespace ESGHackathon2024
 
             MATTraining.SetValueExt<MATTrainingAssign.bAccountID>(e.Row, Base.Employee.Current?.BAccountID);
         }
+        [PXMergeAttributes(Method =MergeMethod.Merge)]
+        [ESGGenders()]
+        protected void _(Events.CacheAttached<Contact.gender> e) { }
     }
 }

@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\ESGGenders.cs" />
     <Compile Include="DACExt\ContactExt.cs" />
     <Compile Include="DAC\MATEthnicity.cs" />
     <Compile Include="DAC\MATPosClass.cs" />
