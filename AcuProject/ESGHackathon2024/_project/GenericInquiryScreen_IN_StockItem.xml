@@ -137,42 +137,91 @@
         </layout>
         <data>
             <GIDesign>
-                <row DesignID="4c219105-edc1-48a0-a1e5-1f5c115d43c8" Name="NonActualTrainingDate" FilterColCount="3" PageSize="0" ExportTop="0" NewRecordCreationEnabled="0" MassDeleteEnabled="0" AutoConfirmDelete="0" MassRecordsUpdateEnabled="0" MassActionsOnRecordsEnabled="0" ExposeViaOData="0" ExposeViaMobile="0" ShowDeletedRecords="0" ShowArchivedRecords="0" NotesAndFilesTable="$&lt;None&gt;">
-                    <GIGroupBy LineNbr="2" IsActive="1" DataFieldName="EPEmployee.acctName" />
-                    <GIGroupBy LineNbr="1" IsActive="1" DataFieldName="EPEmployee.acctCD" />
-                    <GITable Alias="MATTrainingAssign" Name="ESGHackathon2024.MATTrainingAssign">
-                        <GIResult LineNbr="3" SortOrder="3" IsActive="1" Field="completionDate" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="0" RowID="46623b14-8e7b-4130-8dfe-0467a9bbca88" />
+                <row DesignID="e4352bbd-a53a-42c4-9b96-e9f0fda070c7" Name="IN-StockItem" FilterColCount="3" PageSize="0" PrimaryScreenIDNew="IN202500" NewRecordCreationEnabled="1" MassDeleteEnabled="0" AutoConfirmDelete="0" MassRecordsUpdateEnabled="0" MassActionsOnRecordsEnabled="0" ExposeViaOData="0" ExposeViaMobile="0" ShowDeletedRecords="0" ShowArchivedRecords="0">
+                    <GINavigationScreen Link="IN202500" LineNbr="100002" SortOrder="200" WindowMode="L" IsActive="1" Icon="visibility" NoteID="144d3071-f5fc-4e11-8d36-ff976c74ae38">
+                        <GINavigationParameter LineNbr="100001" FieldName="InventoryCD" ParameterName="InventoryItem.inventoryCD" IsExpression="0" />
+                    </GINavigationScreen>
+                    <GINavigationScreen Link="IN202500" LineNbr="1" SortOrder="100" WindowMode="I" IsActive="1" NoteID="b938a9d4-20a5-4c0d-8104-17c84ddd1cdb">
+                        <GINavigationParameter LineNbr="1" FieldName="InventoryCD" ParameterName="InventoryItem.InventoryCD" IsExpression="0" />
+                    </GINavigationScreen>
+                    <GISort LineNbr="1" IsActive="1" DataFieldName="InventoryItem.inventoryCD" SortOrder="A" />
+                    <GITable Alias="InventoryItemCurySettings" Name="PX.Objects.IN.InventoryItemCurySettings">
+                        <GIResult LineNbr="18" SortOrder="18" IsActive="1" Field="preferredVendorID" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="0" RowID="33cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="16" SortOrder="16" IsActive="1" Field="pendingStdCost" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="0" RowID="31cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="15" SortOrder="15" IsActive="1" Field="stdCost" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="0" RowID="30cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="14" SortOrder="14" IsActive="1" Field="basePrice" IsVisible="1" DefaultNav="0" QuickFilter="0" FastFilter="0" RowID="2fcf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="10" SortOrder="10" IsActive="1" Field="dfltSiteID" IsVisible="1" DefaultNav="0" QuickFilter="0" FastFilter="0" RowID="2bcf5054-a47e-e711-82a5-6c0b84b36be4" />
                     </GITable>
-                    <GITable Alias="EPEmployee" Name="PX.Objects.EP.EPEmployee">
-                        <GIRelation LineNbr="1" ChildTable="MATTrainingAssign" IsActive="1" JoinType="L">
-                            <GIOn LineNbr="1" ParentField="bAccountID" Condition="E" ChildField="bAccountID" Operation="A" />
+                    <GITable Alias="InventoryItem" Name="PX.Objects.IN.InventoryItem">
+                        <GIRelation LineNbr="4" ChildTable="InventoryItemCurySettings" IsActive="1" JoinType="L">
+                            <GIOn LineNbr="5" ParentField="Branch.BaseCuryID" Condition="E" ChildField="InventoryItemCurySettings.CuryID" Operation="A" />
+                            <GIOn LineNbr="3" ParentField="InventoryItem.InventoryID" Condition="E" ChildField="InventoryItemCurySettings.InventoryID" Operation="A" />
                         </GIRelation>
-                        <GIResult LineNbr="2" SortOrder="2" IsActive="1" Field="acctCD" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="0" RowID="f92bc5b0-bdf0-495f-ae59-81c9ddf0d04b" />
-                        <GIResult LineNbr="1" SortOrder="1" IsActive="1" Field="acctName" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="0" RowID="fdca34a1-0b65-4df4-ad48-4c9a0a275629" />
+                        <GIRelation LineNbr="3" ChildTable="Branch" IsActive="1" JoinType="C" />
+                        <GIRelation LineNbr="2" ChildTable="BAccountR" IsActive="1" JoinType="L">
+                            <GIOn LineNbr="2" ParentField="preferredVendorID" Condition="E" ChildField="bAccountID" Operation="O" />
+                        </GIRelation>
+                        <GIRelation LineNbr="1" ChildTable="INItemClass" IsActive="1" JoinType="L">
+                            <GIOn LineNbr="1" ParentField="itemClassID" Condition="E" ChildField="itemClassID" Operation="A" />
+                        </GIRelation>
+                        <GIResult LineNbr="29" SortOrder="29" IsActive="1" Field="lastModifiedDateTime" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="0" RowID="3ecf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="28" SortOrder="28" IsActive="1" Field="lastModifiedByID" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="3dcf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="27" SortOrder="27" IsActive="1" Field="createdDateTime" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="0" RowID="3ccf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="26" SortOrder="26" IsActive="1" Field="createdByID" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="3bcf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="25" SortOrder="25" IsActive="1" Field="itemStatus" IsVisible="1" DefaultNav="1" QuickFilter="1" FastFilter="1" RowID="3acf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="24" SortOrder="24" IsActive="1" Field="productManagerID" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="39cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="23" SortOrder="23" IsActive="1" Field="productWorkgroupID" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="38cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="22" SortOrder="22" IsActive="1" Field="priceManagerID" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="37cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="21" SortOrder="21" IsActive="1" Field="priceWorkgroupID" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="36cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="20" SortOrder="20" IsActive="1" Field="priceClassID" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="35cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="19" SortOrder="19" IsActive="1" Field="movementClassID" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="34cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="17" SortOrder="17" IsActive="1" Field="markupPct" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="32cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="13" SortOrder="13" IsActive="1" Field="purchaseUnit" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="2ecf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="12" SortOrder="12" IsActive="1" Field="salesUnit" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="2dcf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="11" SortOrder="11" IsActive="1" Field="baseUnit" IsVisible="1" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="2ccf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="9" SortOrder="9" IsActive="1" Field="valMethod" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="2acf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="8" SortOrder="8" IsActive="1" Field="lotSerClassID" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="29cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="7" SortOrder="7" IsActive="1" Field="taxCategoryID" IsVisible="1" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="28cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="6" SortOrder="6" IsActive="1" Field="postClassID" IsVisible="1" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="27cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="5" SortOrder="5" IsActive="1" Field="itemClassID" IsVisible="1" DefaultNav="0" QuickFilter="1" FastFilter="1" RowID="26cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="4" SortOrder="4" IsActive="1" Field="kitItem" IsVisible="0" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="25cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="3" SortOrder="3" IsActive="1" Field="itemType" IsVisible="1" DefaultNav="0" QuickFilter="1" FastFilter="1" RowID="24cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="2" SortOrder="2" IsActive="1" Field="descr" IsVisible="1" DefaultNav="0" QuickFilter="0" FastFilter="1" RowID="23cf5054-a47e-e711-82a5-6c0b84b36be4" />
+                        <GIResult LineNbr="1" SortOrder="1" IsActive="1" Field="inventoryCD" IsVisible="1" DefaultNav="0" NavigationNbr="1" QuickFilter="0" FastFilter="1" RowID="22cf5054-a47e-e711-82a5-6c0b84b36be4" />
                     </GITable>
-                    <GIWhere LineNbr="2" IsActive="1" DataFieldName="MATTrainingAssign.trainingID" Condition="NU" IsExpression="0" Operation="A" />
-                    <GIWhere LineNbr="1" IsActive="1" DataFieldName="MATTrainingAssign.trainingID" Condition="E" IsExpression="1" Value1="FireProtection" Operation="O" />
+                    <GITable Alias="INItemClass" Name="PX.Objects.IN.INItemClass" />
+                    <GITable Alias="Branch" Name="PX.Objects.GL.Branch" />
+                    <GITable Alias="BAccountR" Name="PX.Objects.CR.BAccount" />
+                    <GIWhere LineNbr="4" IsActive="1" DataFieldName="Branch.branchID" Condition="E" IsExpression="0" Value1="@branch" Operation="A" />
+                    <GIWhere LineNbr="3" IsActive="1" DataFieldName="InventoryItem.isTemplate" Condition="NE" IsExpression="0" Value1="true" Operation="A" />
+                    <GIWhere LineNbr="2" IsActive="1" DataFieldName="InventoryItem.itemStatus" Condition="NE" IsExpression="0" Value1="XX" Operation="A" />
+                    <GIWhere LineNbr="1" IsActive="1" DataFieldName="InventoryItem.stkItem" Condition="E" IsExpression="0" Value1="1" Operation="A" />
                     <SiteMap linkname="toDesignById">
-                        <row Title="NonActualTrainingDate" Url="~/GenericInquiry/GenericInquiry.aspx?id=4c219105-edc1-48a0-a1e5-1f5c115d43c8" ScreenID="GI640593" NodeID="70d5e8f2-3928-4ddc-a851-c76b302769ca" ParentID="00000000-0000-0000-0000-000000000000" SelectedUI="E">
-                            <MUIScreen IsPortal="0" WorkspaceID="bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb" Order="640402" SubcategoryID="98e86774-69e3-41ea-b94f-eb2c7a8426d4">
+                        <row Position="20" Title="Stock Items" Url="~/GenericInquiry/GenericInquiry.aspx?id=e4352bbd-a53a-42c4-9b96-e9f0fda070c7" ScreenID="IN2025PL" NodeID="a191afac-d5c5-48b3-a450-970d364acb26" ParentID="12167736-ae7e-46ab-8a8c-dd4b86217519">
+                            <ListEntryPoint EntryScreenID="IN202500" IsActive="1" />
+                        </row>
+                    </SiteMap>
+                    <SiteMap linkname="to1Screen">
+                        <row Position="1" Title="Stock Items" Url="~/Pages/IN/IN202500.aspx" NodeID="f21272b4-6f90-4504-96fd-f825b085710b" ParentID="c45494a4-36f3-479f-b2de-d4fd01816970">
+                            <MUIScreen IsPortal="0" WorkspaceID="6557c1c6-747e-45bb-9072-54f096598d61" Order="5" SubcategoryID="6d40b0b6-18f4-4139-adac-8ec8cb2a17ea">
                                 <MUIPinnedScreen IsPortal="0" Username="" IsPinned="1" />
                             </MUIScreen>
+                            <MUITile IsPortal="0" TileID="a6b07e24-2d8e-46e4-934b-171acfe3a791" WorkspaceID="6557c1c6-747e-45bb-9072-54f096598d61" Order="40" Title="New Stock Item" Icon="work" Parameters="" />
                         </row>
                     </SiteMap>
                 </row>
             </GIDesign>
             <MUIWorkspace>
-                <row IsPortal="1" WorkspaceID="bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb" Order="5" Title="Data Views" Icon="poll" IsSystem="1">
-                    <MUIFavoriteWorkspace IsPortal="0" Username="" IsFavorite="1" />
-                </row>
-                <row IsPortal="0" WorkspaceID="bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb" Order="32" Title="Data Views" Icon="poll" IsSystem="1">
+                <row IsPortal="0" WorkspaceID="6557c1c6-747e-45bb-9072-54f096598d61" Order="284" Title="Inventory" Icon="local_shipping" AreaID="62cfd5dc-8eb9-4e92-bbcd-e0a99eb5e5df" ScreenID="WSIN0000" IsSystem="0">
                     <MUIFavoriteWorkspace IsPortal="0" Username="" IsFavorite="1" />
                 </row>
             </MUIWorkspace>
             <MUISubcategory>
-                <row IsPortal="1" SubcategoryID="98e86774-69e3-41ea-b94f-eb2c7a8426d4" Order="896" Name="Inquiries" Icon="" IsSystem="1" />
-                <row IsPortal="0" SubcategoryID="98e86774-69e3-41ea-b94f-eb2c7a8426d4" Order="896" Name="Inquiries" Icon="" IsSystem="1" />
+                <row IsPortal="0" SubcategoryID="6d40b0b6-18f4-4139-adac-8ec8cb2a17ea" Order="128" Name="Profiles" Icon="" IsSystem="0" />
             </MUISubcategory>
+            <MUIArea>
+                <row IsPortal="0" AreaID="62cfd5dc-8eb9-4e92-bbcd-e0a99eb5e5df" Order="20" Name="Operations" />
+            </MUIArea>
         </data>
     </data-set>
 </GenericInquiryScreen>

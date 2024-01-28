@@ -137,24 +137,17 @@
         </layout>
         <data>
             <GIDesign>
-                <row DesignID="4c219105-edc1-48a0-a1e5-1f5c115d43c8" Name="NonActualTrainingDate" FilterColCount="3" PageSize="0" ExportTop="0" NewRecordCreationEnabled="0" MassDeleteEnabled="0" AutoConfirmDelete="0" MassRecordsUpdateEnabled="0" MassActionsOnRecordsEnabled="0" ExposeViaOData="0" ExposeViaMobile="0" ShowDeletedRecords="0" ShowArchivedRecords="0" NotesAndFilesTable="$&lt;None&gt;">
-                    <GIGroupBy LineNbr="2" IsActive="1" DataFieldName="EPEmployee.acctName" />
-                    <GIGroupBy LineNbr="1" IsActive="1" DataFieldName="EPEmployee.acctCD" />
-                    <GITable Alias="MATTrainingAssign" Name="ESGHackathon2024.MATTrainingAssign">
-                        <GIResult LineNbr="3" SortOrder="3" IsActive="1" Field="completionDate" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="0" RowID="46623b14-8e7b-4130-8dfe-0467a9bbca88" />
+                <row DesignID="d49e4f18-e350-4eaf-92c4-66515f80a773" Name="IT Incident by Classes" FilterColCount="3" PageSize="0" ExportTop="0" NewRecordCreationEnabled="0" MassDeleteEnabled="0" AutoConfirmDelete="0" MassRecordsUpdateEnabled="0" MassActionsOnRecordsEnabled="0" ExposeViaOData="0" ExposeViaMobile="0" ShowDeletedRecords="0" ShowArchivedRecords="0" NotesAndFilesTable="$&lt;None&gt;">
+                    <GITable Alias="Incident" Name="ESGHackathon2024.MATIncident">
+                        <GIResult LineNbr="4" SortOrder="4" IsActive="1" Field="incidentDate" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="0" RowID="95d725a3-d8dc-47cc-9f76-9dfc1e194e43" />
+                        <GIResult LineNbr="3" SortOrder="3" IsActive="1" Field="incidentClass" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="0" RowID="b6c2d1d9-5138-4f86-9f00-207078c322d9" />
+                        <GIResult LineNbr="2" SortOrder="2" IsActive="1" Field="incidentNbr" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="0" RowID="8e7fd147-f587-4f03-b356-f128a1b5aac9" />
+                        <GIResult LineNbr="1" SortOrder="1" IsActive="1" Field="incidentType" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="0" RowID="c1e60956-8709-4ee1-88e1-9bb5167b1cf7" />
                     </GITable>
-                    <GITable Alias="EPEmployee" Name="PX.Objects.EP.EPEmployee">
-                        <GIRelation LineNbr="1" ChildTable="MATTrainingAssign" IsActive="1" JoinType="L">
-                            <GIOn LineNbr="1" ParentField="bAccountID" Condition="E" ChildField="bAccountID" Operation="A" />
-                        </GIRelation>
-                        <GIResult LineNbr="2" SortOrder="2" IsActive="1" Field="acctCD" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="0" RowID="f92bc5b0-bdf0-495f-ae59-81c9ddf0d04b" />
-                        <GIResult LineNbr="1" SortOrder="1" IsActive="1" Field="acctName" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="0" RowID="fdca34a1-0b65-4df4-ad48-4c9a0a275629" />
-                    </GITable>
-                    <GIWhere LineNbr="2" IsActive="1" DataFieldName="MATTrainingAssign.trainingID" Condition="NU" IsExpression="0" Operation="A" />
-                    <GIWhere LineNbr="1" IsActive="1" DataFieldName="MATTrainingAssign.trainingID" Condition="E" IsExpression="1" Value1="FireProtection" Operation="O" />
+                    <GIWhere LineNbr="1" IsActive="1" DataFieldName="Incident.incidentType" Condition="E" IsExpression="1" Value1="IT" Operation="A" />
                     <SiteMap linkname="toDesignById">
-                        <row Title="NonActualTrainingDate" Url="~/GenericInquiry/GenericInquiry.aspx?id=4c219105-edc1-48a0-a1e5-1f5c115d43c8" ScreenID="GI640593" NodeID="70d5e8f2-3928-4ddc-a851-c76b302769ca" ParentID="00000000-0000-0000-0000-000000000000" SelectedUI="E">
-                            <MUIScreen IsPortal="0" WorkspaceID="bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb" Order="640402" SubcategoryID="98e86774-69e3-41ea-b94f-eb2c7a8426d4">
+                        <row Title="IT Incident by Classes" Url="~/GenericInquiry/GenericInquiry.aspx?id=d49e4f18-e350-4eaf-92c4-66515f80a773" ScreenID="GI640594" NodeID="a3d5d61c-6e68-463a-9c4e-c698653de769" ParentID="00000000-0000-0000-0000-000000000000" SelectedUI="E">
+                            <MUIScreen IsPortal="0" WorkspaceID="bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb" Order="640412" SubcategoryID="98e86774-69e3-41ea-b94f-eb2c7a8426d4">
                                 <MUIPinnedScreen IsPortal="0" Username="" IsPinned="1" />
                             </MUIScreen>
                         </row>
