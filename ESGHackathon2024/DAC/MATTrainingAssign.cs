@@ -8,12 +8,6 @@ namespace ESGHackathon2024
   [PXCacheName("MATTrainingAssign")]
   public class MATTrainingAssign : IBqlTable
   {
-    #region CompayID
-    [PXDBInt(IsKey = true)]
-    [PXUIField(DisplayName = "Compay ID")]
-    public virtual int? CompayID { get; set; }
-    public abstract class compayID : PX.Data.BQL.BqlInt.Field<compayID> { }
-    #endregion
 
     #region BAccountID
     [PXDBInt(IsKey = true)]
