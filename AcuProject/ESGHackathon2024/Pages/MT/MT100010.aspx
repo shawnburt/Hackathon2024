@@ -10,20 +10,20 @@
 <asp:Content ID="cont2" ContentPlaceHolderID="phL" Runat="Server">
 	
 	<px:PXGrid ID="grid" runat="server" Height="400px" Width="100%" Style="z-index: 100" ActionsPosition="Top"
-        AllowSearch="true" DataSourceID="ds" SkinID="Primary" FastFilterFields="TrainingTypeCD,Descr">
+        AllowSearch="true" DataSourceID="ds" SkinID="Details" FastFilterFields="TrainingTypeCD,Descr">
         <Levels>
             <px:PXGridLevel DataMember="Document">
                 <RowTemplate>
-                    <px:PXLayoutRule runat="server" StartColumn="True" LabelsWidth="M" ControlSize="XM" />
-                    <px:PXTextEdit runat="server" ID="CstPXTextEdit2" DataField="TrainingTypeCD" />
+                    <px:PXLayoutRule runat="server" StartColumn="True" LabelsWidth="M" ControlSize="XM" ></px:PXLayoutRule>
+                    <px:PXTextEdit runat="server" ID="CstPXTextEdit2" DataField="TrainingTypeCD" ></px:PXTextEdit>
 					<px:PXTextEdit TextMode="MultiLine" Height="200px" Width="400px" runat="server" ID="CstPXTextEdit1" DataField="Descr" ></px:PXTextEdit>
                 </RowTemplate>
                 <Columns>
-                    <px:PXGridColumn DataField="TrainingTypeCD"  />
-                    <px:PXGridColumn DataField="Descr" Width="400px" />
+                    <px:PXGridColumn DataField="TrainingTypeCD"  ></px:PXGridColumn>
+                    <px:PXGridColumn DataField="Descr" Width="400px" ></px:PXGridColumn>
                 </Columns>
             </px:PXGridLevel>
         </Levels>
-        <AutoSize Container="Window" Enabled="True" MinHeight="200" />
+        <AutoSize Container="Window" Enabled="True" MinHeight="200" ></AutoSize>
     </px:PXGrid>
 </asp:Content>
