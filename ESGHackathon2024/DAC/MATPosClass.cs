@@ -3,10 +3,10 @@ using PX.Data;
 using PX.Data.BQL;
 using PX.Data.ReferentialIntegrity.Attributes;
 
-namespace Hackathon2024
+namespace ESGHackathon2024
 {
     [Serializable]
-    [PXCacheName("MATPosClass")]
+    [PXCacheName("Position Class")]
     [PXPrimaryGraph(typeof(MATPosClassMaint))]
     public class MATPosClass : IBqlTable
     {

@@ -6,36 +6,44 @@ using PX.Data.ReferentialIntegrity.Attributes;
 namespace ESGHackathon2024
 {
     [Serializable]
-    [PXCacheName("MATTraining")]
+    [PXCacheName("Training")]
+    [PXPrimaryGraph(typeof(MATTrainingMaint))]
     public class MATTraining : IBqlTable
     {
+        #region Keys
         public class PK : PrimaryKeyOf<MATTraining>.By<trainingID>
         {
-            public static MATTraining Find(PXGraph graph, int? trainingID) => FindBy(graph, trainingID);
+            public static MATTraining Find(PXGraph graph, int? trainingID, PKFindOptions options = PKFindOptions.None) => FindBy(graph, trainingID, options);
         }
+        public class UK : PrimaryKeyOf<MATTraining>.By<trainingCD>
+        {
+            public static MATTraining Find(PXGraph graph, string trainingCD, PKFindOptions options = PKFindOptions.None) => FindBy(graph, trainingCD, options);
+        }
+        #endregion
+
 
         #region TrainingID
         [PXDBIdentity]
-        [PXSelector(typeof(Search<MATTraining.trainingID>), SubstituteKey = typeof(trainingCD), DescriptionField = typeof(descr))]
+        [PXSelector(typeof(Search<trainingID>), SubstituteKey = typeof(trainingCD), DescriptionField = typeof(descr))]
         public virtual int? TrainingID { get; set; }
-        public abstract class trainingID : PX.Data.BQL.BqlInt.Field<trainingID> { }
+        public abstract class trainingID : BqlInt.Field<trainingID> { }
         #endregion
 
         #region TrainingCD
-        [PXDBString(30, IsUnicode = true, InputMask = "", IsKey = true)]
+        [PXDBString(30, IsKey = true, IsUnicode = true, InputMask = "")]
+        [PXDefault]
         [PXUIField(DisplayName = "Training")]
-        [PXDefault()]
         public virtual string TrainingCD { get; set; }
-        public abstract class trainingCD : PX.Data.BQL.BqlString.Field<trainingCD> { }
+        public abstract class trainingCD : BqlString.Field<trainingCD> { }
         #endregion
 
         #region TrainingTypeID
-        [PXDBInt()]
+        [PXDBInt]
         [PXUIField(DisplayName = "Training Type ID")]
+        [PXDefault]
         [PXSelector(typeof(Search<MATTrainingType.trainingTypeID>), SubstituteKey = typeof(MATTrainingType.trainingTypeCD), DescriptionField = typeof(MATTrainingType.descr))]
-        [PXDefault()]
         public virtual int? TrainingTypeID { get; set; }
-        public abstract class trainingTypeID : PX.Data.BQL.BqlInt.Field<trainingTypeID> { }
+        public abstract class trainingTypeID : BqlInt.Field<trainingTypeID> { }
         #endregion
 
         #region Descr
@@ -43,7 +51,7 @@ namespace ESGHackathon2024
         [PXDefault]
         [PXUIField(DisplayName = "Description")]
         public virtual string Descr { get; set; }
-        public abstract class descr : PX.Data.BQL.BqlString.Field<descr> { }
+        public abstract class descr : BqlString.Field<descr> { }
         #endregion
 
         #region Tstamp

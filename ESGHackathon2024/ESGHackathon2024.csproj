@@ -58,7 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DACExt\ContactESG.cs" />
+    <Compile Include="DACExt\ContactExt.cs" />
     <Compile Include="DAC\MATEthnicity.cs" />
     <Compile Include="DAC\MATPosClass.cs" />
     <Compile Include="DAC\MATPosType.cs" />
@@ -66,7 +66,7 @@
     <Compile Include="DAC\MATTraining.cs" />
     <Compile Include="DAC\MATTrainingType.cs" />
     <Compile Include="DAC\MATTrainingAssign.cs" />
-    <Compile Include="GraphExt\MATEmployeeMaint.cs" />
+    <Compile Include="GraphExt\EmployeeMaint_Extension.cs" />
     <Compile Include="Graph\MATEthnicityMaint.cs" />
     <Compile Include="Graph\MATRaceMaint.cs" />
     <Compile Include="Graph\MATTrainingMaint.cs" />

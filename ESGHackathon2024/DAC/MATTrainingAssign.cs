@@ -1,21 +1,38 @@
 using System;
 using PX.Data;
 using PX.Data.BQL;
+using PX.Data.ReferentialIntegrity.Attributes;
 using PX.Objects.CR;
+using PX.Objects.EP;
+using CR = PX.Objects.CR;
 
 namespace ESGHackathon2024
 {
 	[Serializable]
-	[PXCacheName("MATTrainingAssign")]
+	[PXCacheName("Training Assign")]
+	[PXPrimaryGraph(typeof(MATTrainingAssignMaint))]
 	public class MATTrainingAssign : IBqlTable
 	{
+		#region Keys
+		public class PK : PrimaryKeyOf<MATTrainingAssign>.By<bAccountID, trainingID>
+		{
+			public static MATTrainingAssign Find(PXGraph graph, int? bAccountID, int? trainingID, PKFindOptions options = PKFindOptions.None) => FindBy(graph, bAccountID, trainingID, options);
+		}
+		public static class FK
+		{
+			public class BAccount : CR.BAccount.PK.ForeignKeyOf<EPPosition>.By<bAccountID> { }
+			public class Training : MATTraining.PK.ForeignKeyOf<EPPosition>.By<trainingID> { }
+		}
+		#endregion
+
+
 		#region BAccountID
 		[PXDBInt(IsKey = true)]
 		[PXUIField(DisplayName = "BAccount ID")]
 		[PXSelector(typeof(Search<BAccount.bAccountID>), SubstituteKey = typeof(BAccount.acctCD), DescriptionField = typeof(BAccount.acctName))]
 		[PXParent(typeof(Select<BAccount, Where<BAccount.bAccountID, Equal<Current<BAccount.bAccountID>>>>))]
 		public virtual int? BAccountID { get; set; }
-		public abstract class bAccountID : PX.Data.BQL.BqlInt.Field<bAccountID> { }
+		public abstract class bAccountID : BqlInt.Field<bAccountID> { }
 		#endregion
 
 		#region TrainingID
@@ -23,14 +40,14 @@ namespace ESGHackathon2024
 		[PXUIField(DisplayName = "Training ID")]
 		[PXSelector(typeof(Search<MATTraining.trainingID>), SubstituteKey = typeof(MATTraining.trainingCD), DescriptionField = typeof(MATTraining.descr))]
 		public virtual int? TrainingID { get; set; }
-		public abstract class trainingID : PX.Data.BQL.BqlInt.Field<trainingID> { }
+		public abstract class trainingID : BqlInt.Field<trainingID> { }
 		#endregion
 
 		#region CompletionDate
-		[PXDBDate()]
+		[PXDBDate]
 		[PXUIField(DisplayName = "Completion Date")]
 		public virtual DateTime? CompletionDate { get; set; }
-		public abstract class completionDate : PX.Data.BQL.BqlDateTime.Field<completionDate> { }
+		public abstract class completionDate : BqlDateTime.Field<completionDate> { }
 		#endregion
 
 		#region Tstamp

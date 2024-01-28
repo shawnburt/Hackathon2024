@@ -141,7 +141,7 @@
                     <GINavigationScreen Link="MT202001" LineNbr="1" SortOrder="1" WindowMode="I" IsActive="1" NoteID="fc37acda-91bd-ee11-8c46-70a8d338b3b8">
                         <GINavigationParameter LineNbr="1" FieldName="PosClassCD" ParameterName="MATPosClass.PosClassCD" IsExpression="0" />
                     </GINavigationScreen>
-                    <GITable Alias="MATPosClass" Name="Hackathon2024.MATPosClass">
+                    <GITable Alias="MATPosClass" Name="ESGHackathon2024.MATPosClass">
                         <GIResult LineNbr="2" SortOrder="2" IsActive="1" Field="descr" SchemaField="MATPosClass.Descr" IsVisible="1" DefaultNav="1" QuickFilter="0" FastFilter="0" RowID="9f58c1e3-09ee-425c-b03d-226355f576e4" />
                         <GIResult LineNbr="1" SortOrder="1" IsActive="1" Field="posClassCD" SchemaField="MATPosClass.PosClassCD" IsVisible="1" DefaultNav="0" NavigationNbr="1" QuickFilter="0" FastFilter="0" RowID="413a6cf1-3779-43fc-adf4-2dcf6b248882" />
                     </GITable>

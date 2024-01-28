@@ -1,10 +1,9 @@
-using ESGHackathon2024;
 using PX.Data;
 using PX.Data.BQL;
 using PX.Data.ReferentialIntegrity.Attributes;
 using PX.Objects.EP;
 
-namespace Hackathon2024
+namespace ESGHackathon2024
 {
     // Acuminator disable once PX1016 ExtensionDoesNotDeclareIsActiveMethod extension should be constantly active
     public sealed class EPPositionExt : PXCacheExtension<EPPosition>
@@ -16,6 +15,7 @@ namespace Hackathon2024
             public class PosType : MATPosType.PK.ForeignKeyOf<EPPosition>.By<usrPosTypeID> { }
         }
         #endregion
+
 
         #region UsrPosClassID
         [PXDBInt]

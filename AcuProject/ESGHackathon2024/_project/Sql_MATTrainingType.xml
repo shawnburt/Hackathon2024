@@ -15,5 +15,9 @@
     <col name="CompanyID" />
     <col name="TrainingTypeID" />
   </index>
+  <index name="MATTrainingType_TrainingTypeCD" unique="true">
+    <col name="CompanyID" />
+    <col name="TrainingTypeCD" />
+  </index>
 </table>]]></CDATA>
 </Sql>

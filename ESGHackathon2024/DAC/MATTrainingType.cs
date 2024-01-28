@@ -6,35 +6,43 @@ using PX.Data.ReferentialIntegrity.Attributes;
 namespace ESGHackathon2024
 {
     [Serializable]
-    [PXCacheName("MATTrainingType")]
+    [PXCacheName("Training Type")]
+    [PXPrimaryGraph(typeof(MATTrainingTypeMaint))]
     public class MATTrainingType : IBqlTable
     {
+        #region Keys
         public class PK : PrimaryKeyOf<MATTrainingType>.By<trainingTypeID>
         {
-            public static MATTrainingType Find(PXGraph graph, int? trainingTypeID) => FindBy(graph, trainingTypeID);
+            public static MATTrainingType Find(PXGraph graph, int? trainingTypeID, PKFindOptions options = PKFindOptions.None) => FindBy(graph, trainingTypeID, options);
         }
+        public class UK : PrimaryKeyOf<MATTrainingType>.By<trainingTypeCD>
+        {
+            public static MATTrainingType Find(PXGraph graph, string trainingTypeCD, PKFindOptions options = PKFindOptions.None) => FindBy(graph, trainingTypeCD, options);
+        }
+        #endregion
+
 
         #region TrainingTypeID
-        [PXDBIdentity(IsKey = true)]
+        [PXDBIdentity]
         [PXSelector(typeof(Search<trainingTypeID>), SubstituteKey = typeof(trainingTypeCD), DescriptionField = typeof(descr))]
         public virtual int? TrainingTypeID { get; set; }
-        public abstract class trainingTypeID : PX.Data.BQL.BqlInt.Field<trainingTypeID> { }
+        public abstract class trainingTypeID : BqlInt.Field<trainingTypeID> { }
         #endregion
 
         #region TrainingTypeCD
-        [PXDBString(30, IsUnicode = true, InputMask = "")]
+        [PXDBString(30, IsKey = true, IsUnicode = true, InputMask = "")]
+        [PXDefault]
         [PXUIField(DisplayName = "Training Type")]
-        [PXDefault()]
         public virtual string TrainingTypeCD { get; set; }
-        public abstract class trainingTypeCD : PX.Data.BQL.BqlString.Field<trainingTypeCD> { }
+        public abstract class trainingTypeCD : BqlString.Field<trainingTypeCD> { }
         #endregion
 
         #region Descr
         [PXDBString(256, IsUnicode = true, InputMask = "")]
-        [PXDefault()]
+        [PXDefault]
         [PXUIField(DisplayName = "Description")]
         public virtual string Descr { get; set; }
-        public abstract class descr : PX.Data.BQL.BqlString.Field<descr> { }
+        public abstract class descr : BqlString.Field<descr> { }
         #endregion
 
         #region Tstamp

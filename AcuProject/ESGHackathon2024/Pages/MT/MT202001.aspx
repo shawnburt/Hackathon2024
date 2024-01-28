@@ -3,7 +3,7 @@
 
 <asp:Content ID="cont1" ContentPlaceHolderID="phDS" Runat="Server">
 	<px:PXDataSource ID="ds" runat="server" Visible="True" Width="100%"
-        TypeName="Hackathon2024.MATPosClassMaint"
+        TypeName="ESGHackathon2024.MATPosClassMaint"
         PrimaryView="PosClasses"
         >
 		<CallbackCommands>

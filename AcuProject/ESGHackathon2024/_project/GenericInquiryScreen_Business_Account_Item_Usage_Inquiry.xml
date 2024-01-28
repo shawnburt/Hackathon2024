@@ -143,7 +143,7 @@
                         <GINavigationParameter LineNbr="2" FieldName="InventoryID" ParameterName="MATBAccountItemUsage.InventoryID" IsExpression="0" />
                         <GINavigationParameter LineNbr="1" FieldName="BAccountID" ParameterName="MATBAccountItemUsage.BAccountID" IsExpression="0" />
                     </GINavigationScreen>
-                    <GITable Alias="MATBAccountItemUsage" Name="Hackathon2024.MATBAccountItemUsage">
+                    <GITable Alias="MATBAccountItemUsage" Name="ESGHackathon2024.MATBAccountItemUsage">
                         <GIResult LineNbr="3" SortOrder="3" IsActive="1" Field="asOfDate" SchemaField="MATBAccountItemUsage.AsOfDate" IsVisible="1" DefaultNav="0" NavigationNbr="1" QuickFilter="0" FastFilter="0" RowID="c23d6602-03f8-45b1-a298-e8c1ef8b39e1" />
                         <GIResult LineNbr="2" SortOrder="2" IsActive="1" Field="inventoryID" SchemaField="MATBAccountItemUsage.InventoryID" IsVisible="1" DefaultNav="0" NavigationNbr="1" QuickFilter="0" FastFilter="0" RowID="52bd41cc-110e-4a09-aa9d-68b56289e69e" />
                         <GIResult LineNbr="1" SortOrder="1" IsActive="1" Field="bAccountID" SchemaField="MATBAccountItemUsage.BAccountID" IsVisible="1" DefaultNav="0" NavigationNbr="1" QuickFilter="0" FastFilter="0" RowID="4f0cd43b-552a-4334-8d38-e3c89b1543de" />

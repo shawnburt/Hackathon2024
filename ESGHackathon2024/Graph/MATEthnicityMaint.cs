@@ -1,13 +1,12 @@
 ﻿using PX.Data;
-using PX.Objects.CS;
-using PX.Objects.GL;
+using PX.Data.BQL.Fluent;
 
 namespace ESGHackathon2024
 {
 	public class MATEthnicityMaint : PXGraph<MATEthnicityMaint>
 	{
-		public PXSelect<MATEthnicity> Records;
+		public SelectFrom<MATEthnicity>.View Records;
 		public PXSavePerRow<MATEthnicity> Save;
-		public PXCancel<MATEthnicity> Cancel;		
+		public PXCancel<MATEthnicity> Cancel;
 	}
 }

@@ -7,10 +7,11 @@ using PX.Objects.IN;
 using CR = PX.Objects.CR;
 using IN = PX.Objects.IN;
 
-namespace Hackathon2024
+namespace ESGHackathon2024
 {
     [Serializable]
-    [PXCacheName("MATBAccountItemUsage")]
+    [PXCacheName("Business Account Item Usage")]
+    [PXPrimaryGraph(typeof(MATBAccountItemUsageMaint))]
     public class MATBAccountItemUsage : IBqlTable
     {
         #region Keys
