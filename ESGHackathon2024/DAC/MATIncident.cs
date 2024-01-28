@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using ESG;
 using PX.Data;
 using PX.Data.BQL;
 using PX.Data.ReferentialIntegrity.Attributes;
@@ -11,6 +8,7 @@ using PX.Objects.FA;
 
 namespace ESGHackathon2024
 {
+	[PXCacheName(MATMessages.Incident)]
 	public class MATIncident : IBqlTable
 	{
 		#region Keys
@@ -18,7 +16,13 @@ namespace ESGHackathon2024
 		{
 			public static MATIncident Find(PXGraph graph, string incidentType, string incidentNbr, PKFindOptions options = PKFindOptions.None) => FindBy(graph, incidentType, incidentNbr, options);
 		}
+		public static class FK
+		{
+			public class IncidentType : MATIncidentType.PK.ForeignKeyOf<MATIncident>.By<incidentType> { }
+			public class IncidentClass : MATIncidentClass.PK.ForeignKeyOf<MATIncident>.By<incidentClass> { }
+		}
 		#endregion
+
 
 		#region IncidentType
 		/// <inheritdoc cref="IncidentType"/>
@@ -27,22 +31,19 @@ namespace ESGHackathon2024
 		[PXDBString(2, IsKey = true, IsFixed = true, InputMask = ">aa")]
 		[PXDefault(MATIncidentTypeConstants.People)]
 		[PXSelector(typeof(MATIncidentType.incidentTypeID), DescriptionField = typeof(MATIncidentType.description))]
-		[PXUIField(DisplayName = "Incident Type", Visibility = PXUIVisibility.SelectorVisible)]
+		[PXUIField(DisplayName = MATMessages.IncidentType, Visibility = PXUIVisibility.SelectorVisible)]
 		[PX.Data.EP.PXFieldDescription]
-		public virtual String IncidentType
-		{
-			get;
-			set;
-		}
+		[PXForeignReference(typeof(FK.IncidentType))]
+		public virtual string IncidentType { get; set; }
 		#endregion
 
 		#region IncidentNbr
 		/// <inheritdoc cref="IncidentNbr"/>
 		public abstract class incidentNbr : PX.Data.BQL.BqlString.Field<incidentNbr> { }
-		
+
 		[PXDBString(15, IsKey = true, IsUnicode = true, InputMask = ">CCCCCCCCCCCCCCC")]
 		[PXDefault()]
-		[PXUIField(DisplayName = "Incident Nbr.", Visibility = PXUIVisibility.SelectorVisible)]
+		[PXUIField(DisplayName = MATMessages.IncidentNbr, Visibility = PXUIVisibility.SelectorVisible)]
 		[PXSelector(typeof(Search<MATIncident.incidentNbr,
 			Where<MATIncident.incidentType, Equal<Optional<MATIncident.incidentType>>,
 				And<Where<Exists<Select<MATIncidentType,
@@ -52,24 +53,17 @@ namespace ESGHackathon2024
 			Where<MATIncidentType.incidentTypeID, Equal<Current<MATIncident.incidentType>>>>),
 			typeof(MATIncident.incidentDate))]
 		[PX.Data.EP.PXFieldDescription]
-		public virtual String IncidentNbr
-		{
-			get;
-			set;
-		}
+		public virtual string IncidentNbr { get; set; }
 		#endregion
+
 		#region IncidentDate
 		/// <inheritdoc cref="IncidentDate"/>
 		public abstract class incidentDate : PX.Data.BQL.BqlDateTime.Field<incidentDate> { }
-		
+
 		[PXDBDate]
 		[PXDefault(typeof(AccessInfo.businessDate))]
-		[PXUIField(DisplayName = "Date", Visibility = PXUIVisibility.SelectorVisible)]
-		public virtual DateTime? IncidentDate
-		{
-			get;
-			set;
-		}
+		[PXUIField(DisplayName = MATMessages.Date, Visibility = PXUIVisibility.SelectorVisible)]
+		public virtual DateTime? IncidentDate { get; set; }
 		#endregion
 
 		#region IncidentClass
@@ -81,57 +75,45 @@ namespace ESGHackathon2024
 		[PXSelector(typeof(Search<MATIncidentClass.incidentClassID,
 			Where<MATIncidentClass.incidentTypeID, Equal<Current<MATIncident.incidentType>>>>),
 			DescriptionField = typeof(MATIncidentClass.description))]
-		[PXUIField(DisplayName = "Incident Class", Visibility = PXUIVisibility.SelectorVisible)]
+		[PXUIField(DisplayName = MATMessages.IncidentClass, Visibility = PXUIVisibility.SelectorVisible)]
 		[PX.Data.EP.PXFieldDescription]
-		public virtual String IncidentClass
-		{
-			get;
-			set;
-		}
+		[PXForeignReference(typeof(FK.IncidentClass))]
+		public virtual string IncidentClass { get; set; }
 		#endregion
 
 		#region Status
 		/// <inheritdoc cref="Status"/>
 		public abstract class status : PX.Data.BQL.BqlString.Field<status> { }
-		
+
 		[PXDBString(1, IsFixed = true)]
-		[PXUIField(DisplayName = "Status", Visibility = PXUIVisibility.SelectorVisible, Enabled = false)]
+		[PXUIField(DisplayName = MATMessages.Status, Visibility = PXUIVisibility.SelectorVisible, Enabled = false)]
 		[MATIncidentStatus.List]
 		[PXDefault(MATIncidentStatus.NewIncident)]
-		public virtual String Status
-		{
-			get;
-			set;
-		}
+		public virtual string Status { get; set; }
 		#endregion
 
 		#region Description
 		public abstract class description : PX.Data.BQL.BqlString.Field<description> { }
 
 		[PXDBString(60, IsUnicode = true)]
-		[PXUIField(DisplayName = "Description", Visibility = PXUIVisibility.SelectorVisible)]
-		public virtual String Description
-		{
-			get;
-			set;
-		}
+		[PXUIField(DisplayName = MATMessages.Description, Visibility = PXUIVisibility.SelectorVisible)]
+		public virtual string Description { get; set; }
 		#endregion
 
 		#region CompletionDate
 		[PXDBDate]
-		[PXUIField(DisplayName = "Completion Date")]
+		[PXUIField(DisplayName = MATMessages.CompletionDate)]
 		public virtual DateTime? CompletionDate { get; set; }
 		public abstract class completionDate : PX.Data.BQL.BqlDateTime.Field<completionDate> { }
 		#endregion
 
 		#region BAccountID
 		[PXDBInt]
-		[PXUIField(DisplayName = "BAccount ID")]
+		[PXUIField(DisplayName = MATMessages.BusinessAccount)]
 		[PXSelector(typeof(Search<EPEmployee.bAccountID>), SubstituteKey = typeof(EPEmployee.acctCD))]
 		public virtual int? BAccountID { get; set; }
 		public abstract class bAccountID : PX.Data.BQL.BqlInt.Field<bAccountID> { }
 		#endregion
-
 
 		#region FixedAssetID
 		public abstract class fixedAssetID : PX.Data.BQL.BqlInt.Field<fixedAssetID> { }
@@ -140,18 +122,13 @@ namespace ESGHackathon2024
 		[PXSelector(typeof(Search<FixedAsset.assetID, Where<FixedAsset.recordType, NotEqual<FARecordType.classType>>>),
 			SubstituteKey = typeof(FixedAsset.assetCD),
 			DescriptionField = typeof(FixedAsset.description))]
-		[PXUIField(DisplayName = "Fixed Asset")]
-		public virtual Int32? FixedAssetID
-		{
-			get;
-			set;
-		}
+		[PXUIField(DisplayName = MATMessages.FixedAsset)]
+		public virtual int? FixedAssetID { get; set; }
 		#endregion
 
 
 		#region Tstamp
 		[PXDBTimestamp()]
-		[PXUIField(DisplayName = "Tstamp")]
 		public virtual byte[] Tstamp { get; set; }
 		public abstract class tstamp : BqlByteArray.Field<tstamp> { }
 		#endregion
@@ -228,23 +205,20 @@ namespace ESGHackathon2024
 		{
 			public voided() : base(Voided) { }
 		}
-		
+
 		public class newIncident : PX.Data.BQL.BqlString.Constant<newIncident>
 		{
 			public newIncident() : base(NewIncident) { }
 		}
-		
+
 		public class inProcess : PX.Data.BQL.BqlString.Constant<inProcess>
 		{
 			public inProcess() : base(InProcess) { }
 		}
-		
+
 		public class completed : PX.Data.BQL.BqlString.Constant<completed>
 		{
 			public completed() : base(Completed) { }
 		}
-		
 	}
-
-
 }

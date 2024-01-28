@@ -32,5 +32,16 @@ namespace ESGHackathon2024
         public const string TrainingType = "Training Type";
         public const string TrainingAssign = "Training Assign";
         public const string CompletionDate = "Completion Date";
+        public const string Incident = "Incident";
+        public const string IncidentType = "Incident Type";
+        public const string IncidentNbr = "Incident Nbr.";
+        public const string Date = "Date";
+        public const string IncidentClass = "Incident Class";
+        public const string Status = "Status";
+        public const string FixedAsset = "Fixed Asset";
+        public const string NumberingSequence = "Numbering Sequence";
+        public const string InProgress = "In Progress";
+        public const string Close = "Close";
+        public const string Decline = "Decline";
     }
 }

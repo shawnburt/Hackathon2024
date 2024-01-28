@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using PX.Data;
 using PX.Data.ReferentialIntegrity.Attributes;
 using PX.Objects.CS;
-using PX.Objects.IN;
-using PX.Objects.SO;
 
-namespace ESG
+namespace ESGHackathon2024
 {
-	[Serializable]
-	[PXCacheName("Incident Type")]
+    [Serializable]
+	[PXCacheName(MATMessages.IncidentType)]
 	public class MATIncidentType : IBqlTable
 	{
 		#region Keys
@@ -20,31 +16,24 @@ namespace ESG
 		}
 		#endregion
 
+
 		#region IncidentTypeID
 		public abstract class incidentTypeID : PX.Data.BQL.BqlString.Field<incidentTypeID>
 		{
 		}
 
 		[PXDBString(2, IsKey = true, IsFixed = true, InputMask = ">aa")]
-		[PXUIField(DisplayName = "Incident Type", Visibility = PXUIVisibility.SelectorVisible)]
+		[PXUIField(DisplayName = MATMessages.IncidentType, Visibility = PXUIVisibility.SelectorVisible)]
 		[PXDefault]
-		public virtual String IncidentTypeID
-		{
-			get;
-			set;
-		}
+		public virtual string IncidentTypeID { get; set; }
 		#endregion
 
 		#region Description
 		public abstract class description : PX.Data.BQL.BqlString.Field<description> { }
 
 		[PXDBString(60, IsUnicode = true)]
-		[PXUIField(DisplayName = "Description", Visibility = PXUIVisibility.SelectorVisible)]
-		public virtual String Description
-		{
-			get;
-			set;
-		}
+		[PXUIField(DisplayName = MATMessages.Description, Visibility = PXUIVisibility.SelectorVisible)]
+		public virtual string Description { get; set; }
 		#endregion
 
 		#region NumberingID
@@ -53,12 +42,8 @@ namespace ESG
 		[PXDBString(10, IsUnicode = true)]
 		[PXDefault]
 		[PXSelector(typeof(Search<Numbering.numberingID>))]
-		[PXUIField(DisplayName = "Numbering Sequence")]
-		public virtual String NumberingID
-		{
-			get;
-			set;
-		}
+		[PXUIField(DisplayName = MATMessages.NumberingSequence)]
+		public virtual string NumberingID { get; set; }
 		#endregion
 	}
 }
