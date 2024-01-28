@@ -9,7 +9,7 @@ namespace ESGHackathon2024
   {
     #region TrainingTypeID
     [PXDBIdentity(IsKey = true)]
-        [PXSelector(typeof(MATTrainingType),SubstituteKey =typeof(trainingTypeCD),DescriptionField =typeof(descr))]
+        [PXSelector(typeof(Search<MATTrainingType.trainingTypeID>),SubstituteKey =typeof(trainingTypeCD),DescriptionField =typeof(descr))]
     public virtual int? TrainingTypeID { get; set; }
     public abstract class trainingTypeID : PX.Data.BQL.BqlInt.Field<trainingTypeID> { }
     #endregion
@@ -17,6 +17,7 @@ namespace ESGHackathon2024
     #region TrainingTypeCD
     [PXDBString(10, IsUnicode = true, InputMask = "")]
     [PXUIField(DisplayName = "Training Type CD")]
+        [PXDefault()]
     public virtual string TrainingTypeCD { get; set; }
     public abstract class trainingTypeCD : PX.Data.BQL.BqlString.Field<trainingTypeCD> { }
     #endregion

@@ -58,6 +58,9 @@
     <Compile Include="DAC\MATTraining.cs" />
     <Compile Include="DAC\MATTrainingType.cs" />
     <Compile Include="DAC\MATTrainingAssign.cs" />
+    <Compile Include="Graph\MATTrainingMaint.cs" />
+    <Compile Include="Graph\MATTrainingTypeMaint.cs" />
+    <Compile Include="Graph\MATTrainingAssignMaint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,7 +74,6 @@
   <ItemGroup>
     <Folder Include="DACExt\" />
     <Folder Include="GraphExt\" />
-    <Folder Include="Graph\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
