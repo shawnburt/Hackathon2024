@@ -37,6 +37,9 @@
                                         </PXGridLevel>
                                     </AddItem>
                                 </Children>
+                                <Prop Key="AutoSize.Enabled" Value="True" />
+                                <Prop Key="AutoSize.Container" Value="Parent" />
+                                <Prop Key="ActionBar.ActionsVisible" Value="True" />
                             </PXGrid>
                         </AddItem>
                     </Children>
