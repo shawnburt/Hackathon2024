@@ -9,7 +9,7 @@
                         <AddItem>
                             <PXGrid TypeFullName="PX.Web.UI.PXGrid">
                                 <Prop Key="Virtual:ApplyStylesheetSkin" />
-                                <Prop Key="ID" Value="CstPXGrid5" />
+                                <Prop Key="ID" Value="grdTraining" />
                                 <Children Key="Levels">
                                     <AddItem>
                                         <PXGridLevel TypeFullName="PX.Web.UI.PXGridLevel">
@@ -40,6 +40,8 @@
                                 <Prop Key="AutoSize.Enabled" Value="True" />
                                 <Prop Key="AutoSize.Container" Value="Parent" />
                                 <Prop Key="ActionBar.ActionsVisible" Value="True" />
+                                <Prop Key="SkinID" Value="DetailsInTab" />
+                                <Prop Key="Width" Value="100%" />
                             </PXGrid>
                         </AddItem>
                     </Children>
