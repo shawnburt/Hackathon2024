@@ -1,6 +1,6 @@
 ﻿<Sql TableName="MATTrainingAssign" TableSchemaXml="#CDATA">
     <CDATA name="TableSchemaXml"><![CDATA[<table name="MATTrainingAssign">
-  <col name="CompanyID" type="Int" />
+  <col name="CompanyID" type="Int" default="Zero" />
   <col name="BAccountID" type="Int" />
   <col name="TrainingID" type="Int" />
   <col name="CompletionDate" type="DateTime" nullable="true" />
