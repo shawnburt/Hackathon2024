@@ -1,0 +1,12 @@
+<Sql TableName="MATEthnicity" TableSchemaXml="#CDATA">
+        <CDATA name="TableSchemaXml"><![CDATA[<table name="MATEthnicity">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="EthnicityID" type="NVarChar(20)" />
+  <col name="RaceID" type="NVarChar(20)" />
+  <col name="Description" type="NVarChar(60)" nullable="true" />
+  <index name="MATEthnicity_PK" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="EthnicityID" />
+  </index>
+</table>]]></CDATA>
+    </Sql>

@@ -1,0 +1,7 @@
+<Sql TableName="Contact" CustomScript="#CDATA">
+        <CDATA name="CustomScript"><![CDATA[IF NOT COL_LENGTH('Contact', 'EthnicityID') IS NOT NULL
+BEGIN
+ALTER TABLE Contact
+	ADD [EthnicityID] [nvarchar](20) NULL
+END]]></CDATA>
+</Sql>
