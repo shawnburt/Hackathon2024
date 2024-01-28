@@ -1,6 +1,7 @@
 using System;
 using PX.Data;
 using PX.Data.BQL;
+using PX.Data.ReferentialIntegrity.Attributes;
 
 namespace ESGHackathon2024
 {
@@ -8,6 +9,11 @@ namespace ESGHackathon2024
     [PXCacheName("MATTraining")]
     public class MATTraining : IBqlTable
     {
+        public class PK : PrimaryKeyOf<MATTraining>.By<trainingID>
+        {
+            public static MATTraining Find(PXGraph graph, int? trainingID) => FindBy(graph, trainingID);
+        }
+
         #region TrainingID
         [PXDBIdentity(IsKey = true)]
         [PXSelector(typeof(Search<MATTraining.trainingID>), SubstituteKey = typeof(trainingCD), DescriptionField = typeof(descr))]

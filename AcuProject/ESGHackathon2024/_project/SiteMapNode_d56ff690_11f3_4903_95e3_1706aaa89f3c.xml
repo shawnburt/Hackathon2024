@@ -25,21 +25,18 @@
         </layout>
         <data>
             <SiteMap>
-                <row Position="21525" Title="Position Types" Url="~/Pages/MT/MT202002.aspx" ScreenID="MT202002" NodeID="b2ab5133-5c05-4ec8-a855-60c8e8f6069b" ParentID="00000000-0000-0000-0000-000000000000" SelectedUI="E">
-                    <MUIScreen IsPortal="0" WorkspaceID="3206e17e-8a34-4e3e-9648-5cee25defde5" Order="60" SubcategoryID="5ff50175-2c51-4716-8e20-bee32a58e3de" />
-                    <MUIScreen IsPortal="0" WorkspaceID="0443ec5a-9634-487b-991b-50e7a5afa55a" Order="10" SubcategoryID="5ff50175-2c51-4716-8e20-bee32a58e3de" />
+                <row Title="Race" Url="~/Pages/MT/MT201000.aspx" ScreenID="MT201000" NodeID="d56ff690-11f3-4903-95e3-1706aaa89f3c" ParentID="00000000-0000-0000-0000-000000000000" SelectedUI="E">
+                    <MUIScreen IsPortal="0" WorkspaceID="0443ec5a-9634-487b-991b-50e7a5afa55a" Order="10" SubcategoryID="6d40b0b6-18f4-4139-adac-8ec8cb2a17ea" />
                 </row>
             </SiteMap>
             <MUIWorkspace>
-                <row IsPortal="0" WorkspaceID="3206e17e-8a34-4e3e-9648-5cee25defde5" Order="784" Title="Configuration" Icon="settings" AreaID="3635ea7d-0975-48ff-b4ac-a870f7e1e8b5" ScreenID="WSCF0000" IsSystem="0" />
                 <row IsPortal="0" WorkspaceID="0443ec5a-9634-487b-991b-50e7a5afa55a" Order="875" Title="ESG" Icon="rate-review" AreaID="62cfd5dc-8eb9-4e92-bbcd-e0a99eb5e5df" IsSystem="0" />
             </MUIWorkspace>
             <MUISubcategory>
-                <row IsPortal="0" SubcategoryID="5ff50175-2c51-4716-8e20-bee32a58e3de" Order="480" Name="Organization" Icon="" IsSystem="0" />
+                <row IsPortal="0" SubcategoryID="6d40b0b6-18f4-4139-adac-8ec8cb2a17ea" Order="128" Name="Profiles" Icon="" IsSystem="0" />
             </MUISubcategory>
             <MUIArea>
                 <row IsPortal="0" AreaID="62cfd5dc-8eb9-4e92-bbcd-e0a99eb5e5df" Order="20" Name="Operations" />
-                <row IsPortal="0" AreaID="3635ea7d-0975-48ff-b4ac-a870f7e1e8b5" Order="30" Name="Configuration" />
             </MUIArea>
         </data>
     </data-set>
