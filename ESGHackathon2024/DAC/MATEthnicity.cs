@@ -6,7 +6,7 @@ using PX.Data.ReferentialIntegrity.Attributes;
 namespace ESGHackathon2024
 {
 	[Serializable]
-	[PXCacheName("Ethnicity", PXDacType.Catalogue)]
+	[PXCacheName(MATMessages.Ethnicity, PXDacType.Catalogue)]
 	[PXPrimaryGraph(typeof(MATEthnicityMaint))]
 	public partial class MATEthnicity : IBqlTable
 	{
@@ -15,35 +15,40 @@ namespace ESGHackathon2024
 		{
 			public static MATEthnicity Find(PXGraph graph, string ethnicityID, PKFindOptions options = PKFindOptions.None) => FindBy(graph, ethnicityID, options);
 		}
+
+		public static class FK
+		{
+			public class Race : MATRace.PK.ForeignKeyOf<MATEthnicity>.By<raceID> { }
+		}
 		#endregion
 
 
 		#region EthnicityID
 		[PXDBString(30, IsKey = true, IsUnicode = true, InputMask = "")]
 		[PXDefault]
-		[PXUIField(DisplayName = "Ethnicity", Visibility = PXUIVisibility.SelectorVisible)]
+		[PXUIField(DisplayName = MATMessages.Ethnicity, Visibility = PXUIVisibility.SelectorVisible)]
 		public virtual string EthnicityID { get; set; }
-        public abstract class ethnicityID : BqlString.Field<ethnicityID> { }
-        #endregion
+		public abstract class ethnicityID : BqlString.Field<ethnicityID> { }
+		#endregion
 
-        #region RaceID
+		#region RaceID
 		[PXDBString(30, IsUnicode = true, InputMask = "")]
-		[PXUIField(DisplayName = "Race", Visibility = PXUIVisibility.Visible, Visible = true, Enabled = true)]
+		[PXUIField(DisplayName = MATMessages.Race, Visibility = PXUIVisibility.Visible, Visible = true, Enabled = true)]
 		[PXSelector(typeof(MATRace.raceID), DescriptionField = typeof(MATRace.description))]
+		[PXForeignReference(typeof(FK.Race))]
 		public string RaceID { get; set; }
-        public abstract class raceID : BqlString.Field<raceID> { }
-        #endregion
+		public abstract class raceID : BqlString.Field<raceID> { }
+		#endregion
 
-        #region Description
+		#region Description
 		[PXDBString(256, IsUnicode = true, InputMask = "")]
-		[PXUIField(DisplayName = "Description", Visibility = PXUIVisibility.SelectorVisible)]
+		[PXUIField(DisplayName = MATMessages.Description, Visibility = PXUIVisibility.SelectorVisible)]
 		public virtual string Description { get; set; }
-        public abstract class description : BqlString.Field<description> { }
-        #endregion
+		public abstract class description : BqlString.Field<description> { }
+		#endregion
 
-        #region Tstamp
-        [PXDBTimestamp()]
-		[PXUIField(DisplayName = "Tstamp")]
+		#region Tstamp
+		[PXDBTimestamp()]
 		public virtual byte[] Tstamp { get; set; }
 		public abstract class tstamp : BqlByteArray.Field<tstamp> { }
 		#endregion

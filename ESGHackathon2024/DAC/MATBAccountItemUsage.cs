@@ -10,7 +10,7 @@ using IN = PX.Objects.IN;
 namespace ESGHackathon2024
 {
     [Serializable]
-    [PXCacheName("Business Account Item Usage")]
+    [PXCacheName(MATMessages.BusinessAccountItemUsage)]
     [PXPrimaryGraph(typeof(MATBAccountItemUsageMaint))]
     public class MATBAccountItemUsage : IBqlTable
     {
@@ -30,7 +30,7 @@ namespace ESGHackathon2024
 
         #region BAccountID
         [PXDBInt(IsKey = true)]
-        [PXUIField(DisplayName = "Business Account", TabOrder = 0)]
+        [PXUIField(DisplayName = MATMessages.BusinessAccount, TabOrder = 0)]
         [PXDimensionSelector("BIZACCT", typeof(Search2<BAccount.bAccountID,
             LeftJoin<Contact,
                 On<Contact.bAccountID, Equal<BAccount.bAccountID>, And<Contact.contactID, Equal<BAccount.defContactID>>>,
@@ -54,12 +54,13 @@ namespace ESGHackathon2024
                 typeof(Address.countryID)
             },
             DescriptionField = typeof(BAccount.acctName))]
+        [PXForeignReference(typeof(FK.BAccount))]
         public virtual int? BAccountID { get; set; }
         public abstract class bAccountID : BqlInt.Field<bAccountID> { }
         #endregion
 
         #region InventoryID
-        [Inventory(IsKey = true, DisplayName = "Inventory ID")]
+        [Inventory(IsKey = true, DisplayName = MATMessages.InventoryID)]
         [PXForeignReference(typeof(FK.InventoryItem))]
         public virtual int? InventoryID { get; set; }
         public abstract class inventoryID : BqlInt.Field<inventoryID> { }
@@ -67,99 +68,98 @@ namespace ESGHackathon2024
 
         #region AsOfDate
         [PXDBDate(IsKey = true)]
-        [PXUIField(DisplayName = "As Of Date")]
+        [PXUIField(DisplayName = MATMessages.AsOfDate)]
         public virtual DateTime? AsOfDate { get; set; }
         public abstract class asOfDate : BqlDateTime.Field<asOfDate> { }
         #endregion
 
         #region EnvironmentallyControlled
         [PXDBBool]
-        [PXUIField(DisplayName = "Environmentally Controlled")]
+        [PXUIField(DisplayName = MATMessages.EnvironmentallyControlled)]
         public virtual bool? EnvironmentallyControlled { get; set; }
         public abstract class environmentallyControlled : BqlBool.Field<environmentallyControlled> { }
         #endregion
 
         #region CarbonEmissions
         [PXDBQuantity]
-        [PXUIField(DisplayName = "Carbon Emissions")]
+        [PXUIField(DisplayName = MATMessages.CarbonEmissions)]
         public virtual decimal? CarbonEmissions { get; set; }
         public abstract class carbonEmissions : BqlDecimal.Field<carbonEmissions> { }
         #endregion
 
         #region CarbonEmissionsUOM
-        [INUnit(DisplayName = "Carbon Emissions UOM")]
+        [INUnit(DisplayName = MATMessages.CarbonEmissionsUOM)]
         public virtual string CarbonEmissionsUOM { get; set; }
         public abstract class carbonEmissionsUOM : BqlString.Field<carbonEmissionsUOM> { }
         #endregion
 
         #region ElectricUsage
         [PXDBQuantity]
-        [PXUIField(DisplayName = "Electric Usage")]
-        public virtual Decimal? ElectricUsage { get; set; }
+        [PXUIField(DisplayName = MATMessages.ElectricUsage)]
+        public virtual decimal? ElectricUsage { get; set; }
         public abstract class electricUsage : BqlDecimal.Field<electricUsage> { }
         #endregion
 
         #region ElectricUsageUOM
-        [INUnit(DisplayName = "Electric Usage UOM")]
+        [INUnit(DisplayName = MATMessages.ElectricUsageUOM)]
         public virtual string ElectricUsageUOM { get; set; }
         public abstract class electricUsageUOM : BqlString.Field<electricUsageUOM> { }
         #endregion
 
         #region GasUsage
         [PXDBQuantity]
-        [PXUIField(DisplayName = "Gas Usage")]
+        [PXUIField(DisplayName = MATMessages.GasUsage)]
         public virtual decimal? GasUsage { get; set; }
         public abstract class gasUsage : BqlDecimal.Field<gasUsage> { }
         #endregion
 
         #region GasUsageUOM
-        [INUnit(DisplayName = "Gas Usage UOM")]
+        [INUnit(DisplayName = MATMessages.GasUsageUOM)]
         public virtual string GasUsageUOM { get; set; }
         public abstract class gasUsageUOM : BqlString.Field<gasUsageUOM> { }
         #endregion
 
         #region OilUsage
         [PXDBQuantity]
-        [PXUIField(DisplayName = "Oil Usage")]
+        [PXUIField(DisplayName = MATMessages.OilUsage)]
         public virtual decimal? OilUsage { get; set; }
         public abstract class oilUsage : BqlDecimal.Field<oilUsage> { }
         #endregion
 
         #region OilUsagewUOM
-        [INUnit(DisplayName = "Oil Usagew UOM")]
+        [INUnit(DisplayName = MATMessages.OilUsageUOM)]
         public virtual string OilUsagewUOM { get; set; }
         public abstract class oilUsagewUOM : BqlString.Field<oilUsagewUOM> { }
         #endregion
 
         #region WaterConsumption
         [PXDBQuantity]
-        [PXUIField(DisplayName = "Water Consumption")]
+        [PXUIField(DisplayName = MATMessages.WaterConsumption)]
         public virtual decimal? WaterConsumption { get; set; }
         public abstract class waterConsumption : BqlDecimal.Field<waterConsumption> { }
         #endregion
 
         #region WaterConsumptionUOM
-        [INUnit(DisplayName = "Water Consumption UOM")]
+        [INUnit(DisplayName = MATMessages.WaterConsumptionUOM)]
         public virtual string WaterConsumptionUOM { get; set; }
         public abstract class waterConsumptionUOM : BqlString.Field<waterConsumptionUOM> { }
         #endregion
 
         #region RecycledWaste
         [PXDBQuantity]
-        [PXUIField(DisplayName = "Recycled Waste")]
+        [PXUIField(DisplayName = MATMessages.RecycledWaste)]
         public virtual decimal? RecycledWaste { get; set; }
         public abstract class recycledWaste : BqlDecimal.Field<recycledWaste> { }
         #endregion
 
         #region RecycledWasteUOM
-        [INUnit(DisplayName = "Recycled Waste UOM")]
+        [INUnit(DisplayName = MATMessages.RecycledWasteUOM)]
         public virtual string RecycledWasteUOM { get; set; }
         public abstract class recycledWasteUOM : BqlString.Field<recycledWasteUOM> { }
         #endregion
 
         #region Tstamp
         [PXDBTimestamp()]
-        [PXUIField(DisplayName = "Tstamp")]
         public virtual byte[] Tstamp { get; set; }
         public abstract class tstamp : BqlByteArray.Field<tstamp> { }
         #endregion

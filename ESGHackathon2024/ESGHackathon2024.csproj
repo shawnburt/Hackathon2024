@@ -78,6 +78,7 @@
     <Compile Include="Graph\MATPosTypeMaint.cs" />
     <Compile Include="DAC\MATBAccountItemUsage.cs" />
     <Compile Include="Graph\MATBAccountItemUsageMaint.cs" />
+    <Compile Include="MATMessages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

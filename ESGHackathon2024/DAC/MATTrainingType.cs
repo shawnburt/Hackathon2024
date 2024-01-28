@@ -6,7 +6,7 @@ using PX.Data.ReferentialIntegrity.Attributes;
 namespace ESGHackathon2024
 {
     [Serializable]
-    [PXCacheName("Training Type")]
+    [PXCacheName(MATMessages.TrainingType, PXDacType.Catalogue)]
     [PXPrimaryGraph(typeof(MATTrainingTypeMaint))]
     public class MATTrainingType : IBqlTable
     {
@@ -32,7 +32,7 @@ namespace ESGHackathon2024
         #region TrainingTypeCD
         [PXDBString(30, IsKey = true, IsUnicode = true, InputMask = "")]
         [PXDefault]
-        [PXUIField(DisplayName = "Training Type")]
+        [PXUIField(DisplayName = MATMessages.TrainingType)]
         public virtual string TrainingTypeCD { get; set; }
         public abstract class trainingTypeCD : BqlString.Field<trainingTypeCD> { }
         #endregion
@@ -40,14 +40,13 @@ namespace ESGHackathon2024
         #region Descr
         [PXDBString(256, IsUnicode = true, InputMask = "")]
         [PXDefault]
-        [PXUIField(DisplayName = "Description")]
+        [PXUIField(DisplayName = MATMessages.Description)]
         public virtual string Descr { get; set; }
         public abstract class descr : BqlString.Field<descr> { }
         #endregion
 
         #region Tstamp
         [PXDBTimestamp()]
-        [PXUIField(DisplayName = "Tstamp")]
         public virtual byte[] Tstamp { get; set; }
         public abstract class tstamp : BqlByteArray.Field<tstamp> { }
         #endregion

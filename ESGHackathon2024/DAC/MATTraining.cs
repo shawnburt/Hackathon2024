@@ -6,7 +6,7 @@ using PX.Data.ReferentialIntegrity.Attributes;
 namespace ESGHackathon2024
 {
     [Serializable]
-    [PXCacheName("Training")]
+    [PXCacheName(MATMessages.Training, PXDacType.Catalogue)]
     [PXPrimaryGraph(typeof(MATTrainingMaint))]
     public class MATTraining : IBqlTable
     {
@@ -18,6 +18,11 @@ namespace ESGHackathon2024
         public class UK : PrimaryKeyOf<MATTraining>.By<trainingCD>
         {
             public static MATTraining Find(PXGraph graph, string trainingCD, PKFindOptions options = PKFindOptions.None) => FindBy(graph, trainingCD, options);
+        }
+
+        public static class FK
+        {
+            public class TrainingType : MATTrainingType.PK.ForeignKeyOf<MATTraining>.By<trainingTypeID> { }
         }
         #endregion
 
@@ -32,16 +37,17 @@ namespace ESGHackathon2024
         #region TrainingCD
         [PXDBString(30, IsKey = true, IsUnicode = true, InputMask = "")]
         [PXDefault]
-        [PXUIField(DisplayName = "Training")]
+        [PXUIField(DisplayName = MATMessages.Training)]
         public virtual string TrainingCD { get; set; }
         public abstract class trainingCD : BqlString.Field<trainingCD> { }
         #endregion
 
         #region TrainingTypeID
         [PXDBInt]
-        [PXUIField(DisplayName = "Training Type ID")]
+        [PXUIField(DisplayName = MATMessages.TrainingType)]
         [PXDefault]
         [PXSelector(typeof(Search<MATTrainingType.trainingTypeID>), SubstituteKey = typeof(MATTrainingType.trainingTypeCD), DescriptionField = typeof(MATTrainingType.descr))]
+        [PXForeignReference(typeof(FK.TrainingType))]
         public virtual int? TrainingTypeID { get; set; }
         public abstract class trainingTypeID : BqlInt.Field<trainingTypeID> { }
         #endregion
@@ -49,14 +55,13 @@ namespace ESGHackathon2024
         #region Descr
         [PXDBString(256, IsUnicode = true, InputMask = "")]
         [PXDefault]
-        [PXUIField(DisplayName = "Description")]
+        [PXUIField(DisplayName = MATMessages.Description)]
         public virtual string Descr { get; set; }
         public abstract class descr : BqlString.Field<descr> { }
         #endregion
 
         #region Tstamp
         [PXDBTimestamp()]
-        [PXUIField(DisplayName = "Tstamp")]
         public virtual byte[] Tstamp { get; set; }
         public abstract class tstamp : BqlByteArray.Field<tstamp> { }
         #endregion

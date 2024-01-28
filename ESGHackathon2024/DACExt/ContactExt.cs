@@ -18,7 +18,7 @@ namespace ESGHackathon2024
 
 		#region EthnicityID
 		[PXDBString(20, IsUnicode = true, InputMask = "")]
-		[PXUIField(DisplayName = "Ethnicity", Visibility = PXUIVisibility.Visible, Visible = true, Enabled = true)]
+		[PXUIField(DisplayName = MATMessages.Ethnicity, Visibility = PXUIVisibility.Visible, Visible = true, Enabled = true)]
 		[PXSelector(typeof(MATEthnicity.ethnicityID), new Type[] {
 				typeof(MATEthnicity.ethnicityID),
 				typeof(MATEthnicity.raceID),

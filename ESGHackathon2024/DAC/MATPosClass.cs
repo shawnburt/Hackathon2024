@@ -6,7 +6,7 @@ using PX.Data.ReferentialIntegrity.Attributes;
 namespace ESGHackathon2024
 {
     [Serializable]
-    [PXCacheName("Position Class")]
+    [PXCacheName(MATMessages.PositionClass, PXDacType.Catalogue)]
     [PXPrimaryGraph(typeof(MATPosClassMaint))]
     public class MATPosClass : IBqlTable
     {
@@ -24,7 +24,6 @@ namespace ESGHackathon2024
 
         #region PosClassID
         [PXDBIdentity]
-        [PXUIField(DisplayName = "Pos Class ID")]
         public virtual int? PosClassID { get; set; }
         public abstract class posClassID : BqlInt.Field<posClassID> { }
         #endregion
@@ -32,7 +31,7 @@ namespace ESGHackathon2024
         #region PosClassCD
         [PXDBString(30, IsKey = true, IsUnicode = true, InputMask = "")]
         [PXDefault]
-        [PXUIField(DisplayName = "Position Class")]
+        [PXUIField(DisplayName = MATMessages.PositionClass)]
         public virtual string PosClassCD { get; set; }
         public abstract class posClassCD : BqlString.Field<posClassCD> { }
         #endregion
@@ -40,14 +39,13 @@ namespace ESGHackathon2024
         #region Descr
         [PXDBString(256, IsUnicode = true, InputMask = "")]
         [PXDefault]
-        [PXUIField(DisplayName = "Description")]
+        [PXUIField(DisplayName = MATMessages.Description)]
         public virtual string Descr { get; set; }
         public abstract class descr : BqlString.Field<descr> { }
         #endregion
 
         #region Tstamp
         [PXDBTimestamp()]
-        [PXUIField(DisplayName = "Tstamp")]
         public virtual byte[] Tstamp { get; set; }
         public abstract class tstamp : BqlByteArray.Field<tstamp> { }
         #endregion
