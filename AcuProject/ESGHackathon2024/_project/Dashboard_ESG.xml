@@ -1,0 +1,103 @@
+﻿<Dashboard>
+        <data-set>
+            <relations format-version="3" relations-version="20230921" main-table="Dashboard">
+                <link from="DashboardParameter (DashboardID)" to="Dashboard (DashboardID)" />
+                <link from="DashboardParameter (NoteID)" to="DashboardParameterKvExt (RecordID)" type="RowKvExt" />
+                <link from="Widget (DashboardID)" to="Dashboard (DashboardID)" type="WeakIfEmpty" isEmpty="OwnerName" />
+                <link from="Widget (NoteID)" to="WidgetKvExt (RecordID)" type="RowKvExt" />
+                <link from="SiteMap (ScreenID)" to="Dashboard (ScreenID)" />
+                <link from="MUIScreen (NodeID)" to="SiteMap (NodeID)" />
+                <link from="MUIWorkspace (WorkspaceID)" to="MUIScreen (WorkspaceID)" type="FromMaster" linkname="workspaceToScreen" split-location="yes" updateable="True" />
+                <link from="MUISubcategory (SubcategoryID)" to="MUIScreen (SubcategoryID)" type="FromMaster" updateable="True" />
+                <link from="MUITile (ScreenID)" to="SiteMap (ScreenID)" />
+                <link from="MUIWorkspace (WorkspaceID)" to="MUITile (WorkspaceID)" type="FromMaster" linkname="workspaceToTile" split-location="yes" updateable="True" />
+                <link from="MUIArea (AreaID)" to="MUIWorkspace (AreaID)" type="FromMaster" updateable="True" />
+                <link from="MUIPinnedScreen (NodeID, WorkspaceID)" to="MUIScreen (NodeID, WorkspaceID)" type="WeakIfEmpty" isEmpty="Username" />
+                <link from="MUIFavoriteWorkspace (WorkspaceID)" to="MUIWorkspace (WorkspaceID)" type="WeakIfEmpty" isEmpty="Username" />
+            </relations>
+            <layout>
+                <table name="Dashboard">
+                    <table name="DashboardParameter" uplink="(DashboardID) = (DashboardID)">
+                        <table name="DashboardParameterKvExt" uplink="(NoteID) = (RecordID)" />
+                    </table>
+                    <table name="Widget" uplink="(DashboardID) = (DashboardID)">
+                        <table name="WidgetKvExt" uplink="(NoteID) = (RecordID)" />
+                    </table>
+                    <table name="SiteMap" uplink="(ScreenID) = (ScreenID)">
+                        <table name="MUIScreen" uplink="(NodeID) = (NodeID)">
+                            <table name="MUIPinnedScreen" uplink="(NodeID, WorkspaceID) = (NodeID, WorkspaceID)" />
+                        </table>
+                        <table name="MUITile" uplink="(ScreenID) = (ScreenID)" />
+                    </table>
+                </table>
+                <table name="MUIWorkspace">
+                    <table name="MUIFavoriteWorkspace" uplink="(WorkspaceID) = (WorkspaceID)" />
+                </table>
+                <table name="MUISubcategory" />
+                <table name="MUIArea" />
+            </layout>
+            <data>
+                <Dashboard>
+                    <row DashboardID="1000223" Name="ESG-Report" DefaultOwnerRole="Administrator" ScreenID="DB000042" AllowCopy="1" Workspace1Size="0" Workspace2Size="0" IsPortal="0" ExposeViaMobile="0" NoteID="41179ee0-05be-ee11-83b9-586c2560a4ae">
+                        <Widget WidgetID="2847" Caption="IT Incidents" Column="0" Row="3" Workspace="0" Width="6" Height="250" Type="PX.Dashboards.Widgets.PXChartWidget" Settings="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ChartSettings&gt;&#xD;&#xA;  &lt;InquiryScreenID&gt;GI640594&lt;/InquiryScreenID&gt;&#xD;&#xA;  &lt;RefreshData&gt;30&lt;/RefreshData&gt;&#xD;&#xA;  &lt;ChartType&gt;0&lt;/ChartType&gt;&#xD;&#xA;  &lt;LegendPosition&gt;5&lt;/LegendPosition&gt;&#xD;&#xA;  &lt;CategoryField&gt;Incident_incidentClass&lt;/CategoryField&gt;&#xD;&#xA;  &lt;CategorySortType&gt;1&lt;/CategorySortType&gt;&#xD;&#xA;  &lt;CategorySortOrder&gt;1&lt;/CategorySortOrder&gt;&#xD;&#xA;  &lt;CategoryTotalAfter&gt;10&lt;/CategoryTotalAfter&gt;&#xD;&#xA;  &lt;CategoryShowTotal&gt;false&lt;/CategoryShowTotal&gt;&#xD;&#xA;  &lt;CategoryDateRounding&gt;0&lt;/CategoryDateRounding&gt;&#xD;&#xA;  &lt;SeriesSortType&gt;0&lt;/SeriesSortType&gt;&#xD;&#xA;  &lt;SeriesSortOrder&gt;0&lt;/SeriesSortOrder&gt;&#xD;&#xA;  &lt;SeriesTotalAfter&gt;10&lt;/SeriesTotalAfter&gt;&#xD;&#xA;  &lt;SeriesShowTotal&gt;false&lt;/SeriesShowTotal&gt;&#xD;&#xA;  &lt;ValueField&gt;Incident_IncidentNbr&lt;/ValueField&gt;&#xD;&#xA;  &lt;ValueAggregate&gt;COUNT&lt;/ValueAggregate&gt;&#xD;&#xA;&lt;/ChartSettings&gt;" IsActive="1" NoteID="662a60fb-0dbe-ee11-83b9-586c2560a4ae" />
+                        <Widget WidgetID="2846" Caption="IT Reporting" Column="0" Row="2" Workspace="0" Width="6" Height="250" Type="PX.Dashboards.Widgets.PXCaptionWidget" Settings="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;CaptionSettings /&gt;" IsActive="1" NoteID="a8664e6f-0dbe-ee11-83b9-586c2560a4ae" />
+                        <Widget WidgetID="2845" Caption="Inventory Items with Non-Filled ESG Informatioin" Column="2" Row="1" Workspace="0" Width="2" Height="114" Type="PX.Dashboards.Widgets.KPIScoreWidget" Settings="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;KPIScoreSettings&gt;&#xD;&#xA;  &lt;InquiryScreenID&gt;IN2025PL&lt;/InquiryScreenID&gt;&#xD;&#xA;  &lt;RefreshData&gt;5&lt;/RefreshData&gt;&#xD;&#xA;  &lt;AggregateField&gt;InventoryItem_InventoryCD&lt;/AggregateField&gt;&#xD;&#xA;  &lt;AggregateFunction&gt;COUNT&lt;/AggregateFunction&gt;&#xD;&#xA;  &lt;NormalColor&gt;Teal&lt;/NormalColor&gt;&#xD;&#xA;  &lt;WarningColor&gt;Yellow&lt;/WarningColor&gt;&#xD;&#xA;  &lt;ErrorColor&gt;Red&lt;/ErrorColor&gt;&#xD;&#xA;  &lt;NormalLevelType&gt;#fix&lt;/NormalLevelType&gt;&#xD;&#xA;  &lt;NormalLevel&gt;50&lt;/NormalLevel&gt;&#xD;&#xA;  &lt;ErrorLevelType&gt;#fix&lt;/ErrorLevelType&gt;&#xD;&#xA;  &lt;ErrorLevel&gt;100&lt;/ErrorLevel&gt;&#xD;&#xA;  &lt;VisualizationType&gt;card&lt;/VisualizationType&gt;&#xD;&#xA;&lt;/KPIScoreSettings&gt;" IsActive="1" NoteID="11d39a14-0dbe-ee11-83b9-586c2560a4ae" />
+                        <Widget WidgetID="2844" Caption="Non-Actual Fire Protect Training Date" Column="1" Row="1" Workspace="0" Width="2" Height="114" Type="PX.Dashboards.Widgets.KPIScoreWidget" IsActive="1" NoteID="a227b191-0abe-ee11-83b9-586c2560a4ae">
+                            <column name="Settings"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<KPIScoreSettings>
+  <InquiryScreenID>GI640593</InquiryScreenID>
+  <RefreshData>5</RefreshData>
+  <AggregateField>EPEmployee_AcctCD</AggregateField>
+  <AggregateFunction>COUNT</AggregateFunction>
+  <NormalColor>Teal</NormalColor>
+  <WarningColor>Yellow</WarningColor>
+  <ErrorColor>Red</ErrorColor>
+  <NormalLevelType>#fix</NormalLevelType>
+  <NormalLevel>15</NormalLevel>
+  <ErrorLevelType>#fix</ErrorLevelType>
+  <ErrorLevel>100</ErrorLevel>
+  <VisualizationType>card</VisualizationType>
+  <FilterRows>
+    <WidgetFilterRow>
+      <LineNbr>-2147483647</LineNbr>
+      <IsActive>true</IsActive>
+      <OpenBrackets>0</OpenBrackets>
+      <DataField>MATTrainingAssign_completionDate</DataField>
+      <Condition>4</Condition>
+      <IsParameter>false</IsParameter>
+      <Value1>@YearStart</Value1>
+      <CloseBrackets>0</CloseBrackets>
+      <Operation>O</Operation>
+    </WidgetFilterRow>
+    <WidgetFilterRow>
+      <LineNbr>-2147483646</LineNbr>
+      <IsActive>true</IsActive>
+      <OpenBrackets>0</OpenBrackets>
+      <DataField>MATTrainingAssign_completionDate</DataField>
+      <Condition>11</Condition>
+      <IsParameter>false</IsParameter>
+      <CloseBrackets>0</CloseBrackets>
+      <Operation>A</Operation>
+    </WidgetFilterRow>
+  </FilterRows>
+</KPIScoreSettings>]]></column>
+                        </Widget>
+                        <Widget WidgetID="2843" Caption="COVID Actual" Column="0" Row="1" Workspace="0" Width="2" Height="114" Type="PX.Dashboards.Widgets.KPIScoreWidget" Settings="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;KPIScoreSettings&gt;&#xD;&#xA;  &lt;InquiryScreenID&gt;GI640592&lt;/InquiryScreenID&gt;&#xD;&#xA;  &lt;RefreshData&gt;30&lt;/RefreshData&gt;&#xD;&#xA;  &lt;AggregateField&gt;Incident_IncidentNbr&lt;/AggregateField&gt;&#xD;&#xA;  &lt;AggregateFunction&gt;COUNT&lt;/AggregateFunction&gt;&#xD;&#xA;  &lt;NormalColor&gt;Teal&lt;/NormalColor&gt;&#xD;&#xA;  &lt;WarningColor&gt;Yellow&lt;/WarningColor&gt;&#xD;&#xA;  &lt;ErrorColor&gt;Red&lt;/ErrorColor&gt;&#xD;&#xA;  &lt;NormalLevelType&gt;#fix&lt;/NormalLevelType&gt;&#xD;&#xA;  &lt;NormalLevel&gt;5&lt;/NormalLevel&gt;&#xD;&#xA;  &lt;ErrorLevelType&gt;#fix&lt;/ErrorLevelType&gt;&#xD;&#xA;  &lt;ErrorLevel&gt;8&lt;/ErrorLevel&gt;&#xD;&#xA;  &lt;VisualizationType&gt;card&lt;/VisualizationType&gt;&#xD;&#xA;&lt;/KPIScoreSettings&gt;" IsActive="1" NoteID="e9a9933b-08be-ee11-83b9-586c2560a4ae" />
+                        <Widget WidgetID="2836" Caption="ESG Reporting" Column="0" Row="0" Workspace="0" Width="12" Height="40" Type="PX.Dashboards.Widgets.PXCaptionWidget" Settings="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;CaptionSettings /&gt;" IsActive="1" NoteID="61d75b21-06be-ee11-83b9-586c2560a4ae" />
+                        <SiteMap Title="ESG-Report" Url="~/Frames/Default.aspx" NodeID="35841f24-585a-4100-9aa6-23dae25cf2ff" ParentID="00000000-0000-0000-0000-000000000000" SelectedUI="E">
+                            <MUIScreen IsPortal="0" WorkspaceID="a66d7837-0bae-42a9-a338-ca40a71556b5" Order="10" SubcategoryID="29d8e453-ee74-405d-abe1-930728d1f9ba">
+                                <MUIPinnedScreen IsPortal="0" Username="" IsPinned="1" />
+                            </MUIScreen>
+                        </SiteMap>
+                    </row>
+                </Dashboard>
+                <MUIWorkspace>
+                    <row IsPortal="0" WorkspaceID="a66d7837-0bae-42a9-a338-ca40a71556b5" Order="845" Title="Dashboards" Icon="dashboard" IsSystem="0" />
+                </MUIWorkspace>
+                <MUISubcategory>
+                    <row IsPortal="1" SubcategoryID="29d8e453-ee74-405d-abe1-930728d1f9ba" Order="1478" Name="Dashboards" Icon="" IsSystem="1" />
+                    <row IsPortal="0" SubcategoryID="29d8e453-ee74-405d-abe1-930728d1f9ba" Order="1478" Name="Dashboards" Icon="" IsSystem="1" />
+                </MUISubcategory>
+            </data>
+        </data-set>
+    </Dashboard>
