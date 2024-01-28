@@ -27,15 +27,18 @@
             <SiteMap>
                 <row Position="21524" Title="Position Classes" Url="~/Pages/MT/MT202001.aspx" ScreenID="MT202001" NodeID="8c8426ee-fbc2-4864-9672-881397462c74" ParentID="00000000-0000-0000-0000-000000000000" SelectedUI="E">
                     <MUIScreen IsPortal="0" WorkspaceID="3206e17e-8a34-4e3e-9648-5cee25defde5" Order="90" SubcategoryID="5ff50175-2c51-4716-8e20-bee32a58e3de" />
+                    <MUIScreen IsPortal="0" WorkspaceID="0443ec5a-9634-487b-991b-50e7a5afa55a" Order="20" SubcategoryID="5ff50175-2c51-4716-8e20-bee32a58e3de" />
                 </row>
             </SiteMap>
             <MUIWorkspace>
                 <row IsPortal="0" WorkspaceID="3206e17e-8a34-4e3e-9648-5cee25defde5" Order="784" Title="Configuration" Icon="settings" AreaID="3635ea7d-0975-48ff-b4ac-a870f7e1e8b5" ScreenID="WSCF0000" IsSystem="0" />
+                <row IsPortal="0" WorkspaceID="0443ec5a-9634-487b-991b-50e7a5afa55a" Order="875" Title="ESG" Icon="rate-review" AreaID="62cfd5dc-8eb9-4e92-bbcd-e0a99eb5e5df" IsSystem="0" />
             </MUIWorkspace>
             <MUISubcategory>
                 <row IsPortal="0" SubcategoryID="5ff50175-2c51-4716-8e20-bee32a58e3de" Order="480" Name="Organization" Icon="" IsSystem="0" />
             </MUISubcategory>
             <MUIArea>
+                <row IsPortal="0" AreaID="62cfd5dc-8eb9-4e92-bbcd-e0a99eb5e5df" Order="20" Name="Operations" />
                 <row IsPortal="0" AreaID="3635ea7d-0975-48ff-b4ac-a870f7e1e8b5" Order="30" Name="Configuration" />
             </MUIArea>
         </data>

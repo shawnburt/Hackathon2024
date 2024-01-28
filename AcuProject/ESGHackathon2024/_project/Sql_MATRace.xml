@@ -1,5 +1,5 @@
-<Sql TableName="MATRace" TableSchemaXml="#CDATA">
-        <CDATA name="TableSchemaXml"><![CDATA[<table name="MATRace">
+﻿<Sql TableName="MATRace" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="MATRace">
   <col name="CompanyID" type="Int" default="Zero" />
   <col name="RaceID" type="NVarChar(20)" />
   <col name="Description" type="NVarChar(60)" nullable="true" />
@@ -8,4 +8,4 @@
     <col name="RaceID" />
   </index>
 </table>]]></CDATA>
-    </Sql>
+</Sql>
