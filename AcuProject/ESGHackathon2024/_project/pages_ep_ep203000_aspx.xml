@@ -65,7 +65,7 @@
                 <PXSelector TypeFullName="PX.Web.UI.PXSelector">
                     <Prop Key="Virtual:ApplyStylesheetSkin" />
                     <Prop Key="ID" Value="CstPXSelector8" />
-                    <Prop Key="DataField" Value="EthnicityID" />
+                    <Prop Key="DataField" Value="UsrEthnicityID" />
                 </PXSelector>
             </AddItem>
         </Children>

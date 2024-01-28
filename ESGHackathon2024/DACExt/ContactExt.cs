@@ -11,12 +11,12 @@ namespace ESGHackathon2024
 		#region Keys
 		public static class FK
 		{
-			public class Ethnicity : MATEthnicity.PK.ForeignKeyOf<Contact>.By<ethnicityID> { }
+			public class Ethnicity : MATEthnicity.PK.ForeignKeyOf<Contact>.By<usrEthnicityID> { }
 		}
 		#endregion
 
 
-		#region EthnicityID
+		#region UsrEthnicityID
 		[PXDBString(20, IsUnicode = true, InputMask = "")]
 		[PXUIField(DisplayName = MATMessages.Ethnicity, Visibility = PXUIVisibility.Visible, Visible = true, Enabled = true)]
 		[PXSelector(typeof(MATEthnicity.ethnicityID), new Type[] {
@@ -24,8 +24,8 @@ namespace ESGHackathon2024
 				typeof(MATEthnicity.raceID),
 				typeof(MATEthnicity.description)
 			}, DescriptionField = typeof(MATEthnicity.description))]
-		public string EthnicityID { get; set; }
-		public abstract class ethnicityID : BqlString.Field<ethnicityID> { }
+		public string UsrEthnicityID { get; set; }
+		public abstract class usrEthnicityID : BqlString.Field<usrEthnicityID> { }
 		#endregion
 	}
 }
