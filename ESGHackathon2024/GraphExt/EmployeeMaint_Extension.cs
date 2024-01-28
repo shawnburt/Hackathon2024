@@ -19,7 +19,8 @@ namespace ESGHackathon2024
 
             MATTraining.SetValueExt<MATTrainingAssign.bAccountID>(e.Row, Base.Employee.Current?.BAccountID);
         }
-        [PXMergeAttributes(Method =MergeMethod.Merge)]
+
+        [PXMergeAttributes(Method = MergeMethod.Merge)]
         [ESGGenders()]
         protected void _(Events.CacheAttached<Contact.gender> e) { }
     }

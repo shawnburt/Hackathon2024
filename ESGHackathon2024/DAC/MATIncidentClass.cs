@@ -49,7 +49,7 @@ namespace ESGHackathon2024
 		#endregion
 
 		#region IncidentTypeID
-		public abstract class raceID : PX.Data.BQL.BqlString.Field<raceID> { }
+		public abstract class incidentTypeID : PX.Data.BQL.BqlString.Field<incidentTypeID> { }
 
 		[PXDBString(2, IsUnicode = true)]
 		[PXUIField(DisplayName = "Incident Type", Visibility = PXUIVisibility.Visible, Visible = true, Enabled = true)]
