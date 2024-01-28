@@ -61,6 +61,9 @@
     <Compile Include="Attributes\ESGGenders.cs" />
     <Compile Include="DACExt\ContactExt.cs" />
     <Compile Include="DAC\MATEthnicity.cs" />
+    <Compile Include="DAC\MATIncident.cs" />
+    <Compile Include="DAC\MATIncidentClass.cs" />
+    <Compile Include="DAC\MATIncidentType.cs" />
     <Compile Include="DAC\MATPosClass.cs" />
     <Compile Include="DAC\MATPosType.cs" />
     <Compile Include="DAC\MATRace.cs" />
@@ -70,6 +73,9 @@
     <Compile Include="GraphExt\EmployeeMaint_Extension.cs" />
     <Compile Include="GraphExt\VendorMaint_Extension.cs" />
     <Compile Include="Graph\MATEthnicityMaint.cs" />
+    <Compile Include="Graph\MATIncidentClassMaint.cs" />
+    <Compile Include="Graph\MATIncidentEntry.cs" />
+    <Compile Include="Graph\MATIncidentTypeMaint.cs" />
     <Compile Include="Graph\MATRaceMaint.cs" />
     <Compile Include="Graph\MATTrainingMaint.cs" />
     <Compile Include="Graph\MATTrainingTypeMaint.cs" />
