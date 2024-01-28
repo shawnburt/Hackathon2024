@@ -3,11 +3,10 @@ using PX.Data;
 
 namespace ESGHackathon2024
 {
-  public class MATTrainingTypeMaint : PXGraph<MATTrainingTypeMaint,MATTrainingType>
-  {
-        public PXSelect<MATTrainingType> Document;
-    #region Event Handlers
-
-    #endregion
-  }
+	public class MATTrainingTypeMaint : PXGraph<MATTrainingTypeMaint>
+	{
+		public PXSelect<MATTrainingType> Document;
+		public PXSavePerRow<MATTrainingType> Save;
+		public PXCancel<MATTrainingType> Cancel;
+	}
 }
