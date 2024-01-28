@@ -1,6 +1,6 @@
 ﻿<Sql TableName="MATTrainingAssign" TableSchemaXml="#CDATA">
     <CDATA name="TableSchemaXml"><![CDATA[<table name="MATTrainingAssign">
-  <col name="CompayID" type="Int" />
+  <col name="CompanyID" type="Int" />
   <col name="BAccountID" type="Int" />
   <col name="TrainingID" type="Int" />
   <col name="CompletionDate" type="DateTime" nullable="true" />
@@ -12,7 +12,7 @@
   <col name="LastModifiedByScreenID" type="Char(8)" />
   <col name="LastModifiedDateTime" type="DateTime" />
   <index name="PK_MATTrainingAssign" clustered="true" primary="true" unique="true">
-    <col name="CompayID" />
+    <col name="CompanyID" />
     <col name="BAccountID" />
     <col name="TrainingID" />
   </index>

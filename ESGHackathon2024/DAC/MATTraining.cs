@@ -15,14 +15,14 @@ namespace ESGHackathon2024
         }
 
         #region TrainingID
-        [PXDBIdentity(IsKey = true)]
+        [PXDBIdentity]
         [PXSelector(typeof(Search<MATTraining.trainingID>), SubstituteKey = typeof(trainingCD), DescriptionField = typeof(descr))]
         public virtual int? TrainingID { get; set; }
         public abstract class trainingID : PX.Data.BQL.BqlInt.Field<trainingID> { }
         #endregion
 
         #region TrainingCD
-        [PXDBString(30, IsUnicode = true, InputMask = "")]
+        [PXDBString(30, IsUnicode = true, InputMask = "", IsKey = true)]
         [PXUIField(DisplayName = "Training")]
         [PXDefault()]
         public virtual string TrainingCD { get; set; }
