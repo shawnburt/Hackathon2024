@@ -18,7 +18,7 @@
             </layout>
             <data>
                 <SiteMap>
-                    <row Title="Ethnicity" Url="~/Pages/MT/MT201050.aspx" ScreenID="MT201050" NodeID="691b2917-14cb-47f4-987b-e7b694ee093c" ParentID="00000000-0000-0000-0000-000000000000" SelectedUI="E">
+                    <row Position="21525" Title="Position Types" Url="~/Pages/MT/MT202002.aspx" ScreenID="MT202002" NodeID="b2ab5133-5c05-4ec8-a855-60c8e8f6069b" ParentID="00000000-0000-0000-0000-000000000000" SelectedUI="E">
                         <RolesInGraph Rolename="Administrator" ApplicationName="/" Accessrights="4" />
                     </row>
                 </SiteMap>

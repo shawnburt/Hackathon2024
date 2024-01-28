@@ -1,0 +1,12 @@
+﻿<Sql TableName="MATIncidentClass" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="MATIncidentClass">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="IncidentClassID" type="NVarChar(20)" />
+  <col name="IncidentTypeID" type="NVarChar(2)" />
+  <col name="Description" type="NVarChar(60)" nullable="true" />
+  <index name="MATIncidentClass_PK" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="IncidentClassID" />
+  </index>
+</table>]]></CDATA>
+</Sql>
